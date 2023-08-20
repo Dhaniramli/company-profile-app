@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Post;
 
-class PostController extends Controller
+class HomeController extends Controller
 {
     public function index()
     {
-        return view('posts',[
+        return view('home',[
             'posts'=> Post::all(),
         ]);
     }

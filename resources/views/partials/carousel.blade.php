@@ -4,7 +4,7 @@
             <img src="/img/one_piece.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item carousel-first">
-            <img src="/img/one_piece.jpg" class="d-block w-100" alt="...">
+            <img src="/img/one_piece2.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item carousel-first">
             <img src="/img/one_piece.jpg" class="d-block w-100" alt="...">

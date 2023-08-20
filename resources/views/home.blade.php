@@ -1,7 +1,7 @@
     @extends('layouts.main')
 
     @section('content')
-    <div class="container">
+    <div class="news">
         <div class="content-title d-flex justify-content-center">
             <h1>Berita Terbaru</h1>
         </div>
@@ -107,7 +107,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="gallery">
         <div class="content-title d-flex justify-content-center">
             <h1>Galeri Foto</h1>
         </div>
@@ -117,71 +117,85 @@
         <div class="carousel-inner carousel-inner-gallery">
             <div class="carousel-item carousel-item-gallery active">
                 <div class="card">
-                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?design" class="d-block w-100" alt="..."> </div>
+                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?design" class="d-block w-100"
+                            alt="..."> </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title 1</h5>
+                        <h5 class="card-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, tempora.
+                        </h5>
                     </div>
                 </div>
             </div>
             <div class="carousel-item carousel-item-gallery">
                 <div class="card">
-                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?programming" class="d-block w-100" alt="..."> </div>
+                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?programming"
+                            class="d-block w-100" alt="..."> </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title 2</h5>
+                        <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
                     </div>
                 </div>
             </div>
             <div class="carousel-item carousel-item-gallery">
                 <div class="card">
-                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?design" class="d-block w-100" alt="..."> </div>
+                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?design" class="d-block w-100"
+                            alt="..."> </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title 3</h5>
+                        <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ratione
+                            consectetur, esse et nostrum rem!</h5>
                     </div>
                 </div>
             </div>
             <div class="carousel-item carousel-item-gallery">
                 <div class="card">
-                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?programming" class="d-block w-100" alt="..."> </div>
+                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?programming"
+                            class="d-block w-100" alt="..."> </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title 4</h5>
+                        <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
                     </div>
                 </div>
             </div>
             <div class="carousel-item carousel-item-gallery">
                 <div class="card">
-                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?design" class="d-block w-100" alt="..."> </div>
+                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?design" class="d-block w-100"
+                            alt="..."> </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title 5</h5>
+                        <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, a!
+                        </h5>
                     </div>
                 </div>
             </div>
             <div class="carousel-item carousel-item-gallery">
                 <div class="card">
-                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?programming" class="d-block w-100" alt="..."> </div>
+                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?programming"
+                            class="d-block w-100" alt="..."> </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title 6</h5>
+                        <h5 class="card-title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati,
+                            suscipit!</h5>
                     </div>
                 </div>
             </div>
             <div class="carousel-item carousel-item-gallery">
                 <div class="card">
-                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?design" class="d-block w-100" alt="..."> </div>
+                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?design" class="d-block w-100"
+                            alt="..."> </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title 7</h5>
+                        <h5 class="card-title">Lorem ipsum dolor sit amet.</h5>
                     </div>
                 </div>
             </div>
             <div class="carousel-item carousel-item-gallery">
                 <div class="card">
-                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?programming" class="d-block w-100" alt="..."> </div>
+                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?programming"
+                            class="d-block w-100" alt="..."> </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title 8</h5>
+                        <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+                            dolorum.</h5>
                     </div>
                 </div>
             </div>
             <div class="carousel-item carousel-item-gallery">
                 <div class="card">
-                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?design" class="d-block w-100" alt="..."> </div>
+                    <div class="img-wrapper"><img src="https://source.unsplash.com/500x300?design" class="d-block w-100"
+                            alt="..."> </div>
                     <div class="card-body">
                         <h5 class="card-title">Card title 9</h5>
                     </div>
@@ -198,10 +212,6 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
-
-    <div class="container mb-5">
-
     </div>
 
 

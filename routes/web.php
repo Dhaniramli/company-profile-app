@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,7 @@ use App\Http\Controllers\AdminPostController;
 */
 
 Route::get('/', function () {
-    return view('home',[
-        'title' => 'Home',
-        'active' => 'home',
-    ]);
+    return view('home', [HomeController::class, 'index']);
 });
 
 Route::get('/posts', [PostController::class, 'index']);
