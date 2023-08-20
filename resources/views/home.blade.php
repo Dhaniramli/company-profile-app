@@ -6,106 +6,24 @@
             <h1>Berita Terbaru</h1>
         </div>
         <div class="row d-flex justify-content-center">
+            @foreach ($posts as $post)
             <div class="col-md-3 mb-3">
                 <div class="card card-news">
                     <img src="https://source.unsplash.com/500x300?programming" class="card-img-top" alt="">
                     <div class="card-body">
-                        <h5 class="card-title">Berita baru</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed excepturi
-                            impedit
-                            in minus ducimus iure numquam possimus qui dolorum.</p>
+                        <h5 class="card-title">{{ $post->title }}</h5>
+                        <p class="card-text">{{ $post->excerpt }}</p>
                         <div class="centered-button">
                             <a href="/posts/" class="btn btn-primary">Read more</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 mb-3">
-                <div class="card card-news">
-                    <img src="https://source.unsplash.com/500x300?programming" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Berita baru</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed excepturi
-                            impedit
-                            in minus ducimus iure numquam possimus qui dolorum.</p>
-                        <div class="centered-button">
-                            <a href="/posts/" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="card card-news">
-                    <img src="https://source.unsplash.com/500x300?programming" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Berita baru</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed excepturi
-                            impedit
-                            in minus ducimus iure numquam possimus qui dolorum.</p>
-                        <div class="centered-button">
-                            <a href="/posts/" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="card card-news">
-                    <img src="https://source.unsplash.com/500x300?programming" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Berita baru</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed excepturi
-                            impedit
-                            in minus ducimus iure numquam possimus qui dolorum.</p>
-                        <div class="centered-button">
-                            <a href="/posts/" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="card card-news">
-                    <img src="https://source.unsplash.com/500x300?programming" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Berita baru</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed excepturi
-                            impedit
-                            in minus ducimus iure numquam possimus qui dolorum.</p>
-                        <div class="centered-button">
-                            <a href="/posts/" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="card card-news">
-                    <img src="https://source.unsplash.com/500x300?programming" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Berita baru</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed excepturi
-                            impedit
-                            in minus ducimus iure numquam possimus qui dolorum.</p>
-                        <div class="centered-button">
-                            <a href="/posts/" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-3">
-                <div class="card card-news">
-                    <img src="https://source.unsplash.com/500x300?programming" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Berita baru</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed excepturi
-                            impedit
-                            in minus ducimus iure numquam possimus qui dolorum.</p>
-                        <div class="centered-button">
-                            <a href="/posts/" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
+
+    {{-- {{ $posts->links() }} --}}
 
     <div class="gallery">
         <div class="content-title d-flex justify-content-center">

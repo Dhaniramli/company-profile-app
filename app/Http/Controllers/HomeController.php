@@ -10,7 +10,8 @@ class HomeController extends Controller
     public function index()
     {
         return view('home',[
-            'posts'=> Post::all(),
+            'posts'=> Post::latest()->paginate(8)->withQueryString(),
+            "title" => "Home",
         ]);
     }
 }

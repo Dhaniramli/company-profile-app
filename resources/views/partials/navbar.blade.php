@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Beranda</a>
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="#">Beranda</a>
                 </li>
                 <li class="nav-item dropdown cursor-pointer">
                     <a class="nav-link dropdown-toggle cursor-pointer" data-bs-toggle="dropdown">Profil</a>
@@ -53,7 +53,7 @@
             </ul>
 
             <ul class="navbar-nav ms-auto">
-                @auth
+                {{-- @auth
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -74,12 +74,12 @@
                         </li>
                     </ul>
                 </li>
-                @else
+                @else --}}
                 <li class="nav-item">
-                    <a href="/login" class="nav-link {{ ($active === "login" ? 'active' : '') }}"><i
+                    <a href="/login" class="nav-link "><i
                             class="bi bi-box-arrow-in-right"></i> Login</a>
                 </li>
-                @endauth
+                {{-- @endauth --}}
             </ul>
 
         </div>

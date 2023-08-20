@@ -15,9 +15,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [HomeController::class, 'index']);
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/posts', [PostController::class, 'index']);
 
