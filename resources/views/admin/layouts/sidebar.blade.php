@@ -12,13 +12,13 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item {{ Request::is('dashboard') ? 'active' : '' }}">
+    <li class="nav-item {{ Request::is('admin') ? 'active' : '' }}">
         <a class="nav-link" href="/admin">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{ (Request::is('admin/visi-misi*') || Request::is('admin/unit-kerja*')) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
             aria-expanded="true" aria-controls="collapseOne">
             <i class="fas fa-user"></i>
@@ -26,18 +26,18 @@
         </a>
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Visi & Misi</a>
+                <a class="collapse-item {{ Request::is('admin/visi-misi*') ? 'active' : '' }}" href="/admin/visi-misi">Visi & Misi</a>
                 <a class="collapse-item" href="#">Tugas & Fungsi</a>
                 <a class="collapse-item" href="#">Kedudukan & Alamat</a>
                 <a class="collapse-item" href="#">Struktur Organisasi</a>
                 <a class="collapse-item" href="#">Denah Kantor</a>
                 <a class="collapse-item" href="#">Pejabat Struktural</a>
-                <a class="collapse-item" href="#">Unit Kerja</a>
+                <a class="collapse-item {{ Request::is('admin/unit-kerja*') ? 'active' : '' }}" href="/admin/unit-kerja">Unit Kerja</a>
             </div>
         </div>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{ (Request::is('admin/posts*') || Request::is('admin/galeri*')) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fa fa-tasks"></i>
@@ -45,8 +45,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Berita Kegiatan</a>
-                <a class="collapse-item" href="#">Galeri</a>
+                <a class="collapse-item {{ Request::is('admin/posts*') ? 'active' : '' }}" href="/admin/posts">Berita Kegiatan</a>
+                <a class="collapse-item {{ Request::is('admin/galeri*') ? 'active' : '' }}" href="/admin/galeri">Galeri</a>
             </div>
         </div>
     </li>

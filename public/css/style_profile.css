@@ -1,0 +1,139 @@
+/* VISI MISI */
+.visi-misi {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.visi-misi .img-top {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.visi-misi h1 {
+    margin-top: 10px;
+    font-size: 2pc;
+    font-weight: 700;
+}
+
+/* AKHIR VISI MISI */
+
+/* TUGAS DAN FUNGSI */
+.tugas-fungsi {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+/* AKHIR TUGAS DAN FUNGSI */
+
+/* KEDUDUKAN */
+.kedudukan {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+/* AKHIR KEDUDUKAN */
+
+/* STRUKTUR ORGANISASI */
+.content-struktur-organisasi{
+    width: 100%;
+    height: auto;
+}
+.struktur-organisasi {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.struktur-organisasi img{
+    width: 100%;
+}
+
+/* AKHIR STRUKTUR ORGANISASI */
+
+/* DENAH KANTOR */
+.denah-kantor {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.denah-kantor img {
+    width: 100%;
+}
+
+/* AKHIR DENAH KANTOR */
+
+/* PEJABAT STRUKTUAL */
+.content-data-pejabat {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.title-data-pejabat {
+    margin-bottom: 50px;
+}
+
+.card-pejabat {
+    border: none;
+    margin: 1px;
+}
+
+.card-pejabat img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.card-pejabat h1 {
+    font-size: 1.2pc;
+    font-weight: 400;
+    text-align: center;
+    color: #5FBAE9;
+}
+
+.card-pejabat h2 {
+    font-size: 1pc;
+    font-weight: 400;
+    text-align: center;
+    color: darkgray;
+}
+
+.card-pejabat h3 {
+    font-size: 1pc;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* AKHIR PEJABAT STRUKTUAL */
+
+/* UNIT KERJA */
+.content-unit-kerja {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.title-unit-kerja {
+    margin-bottom: 50px;
+}
+
+.card-unit-kerja h1 {
+    font-size: 1.2pc;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    margin: 20px;
+}
+
+.card-unit-kerja h2 {
+    font-size: 1pc;
+    font-weight: 400;
+    text-align: center;
+    color: #5FBAE9;
+    margin: 20px;
+}
+
+.card-unit-kerja .card-top {
+    background-color: #5FBAE9;
+}
+
+/* AKHIR UNIT KERJA */

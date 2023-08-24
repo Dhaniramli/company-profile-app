@@ -1,0 +1,58 @@
+/* BERITA KEGIATAN */
+.news-kegiatan{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.content-news h1{
+    font-size: 3pc;
+    font-weight: 700;
+    color: #5FBAE9;
+    margin-bottom: 30px;
+}
+
+.news-kegiatan{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+/* AKHIR BERITA KEGIATAN */
+
+/* DETAIL BERITA */
+.content-post{
+    margin-top: 80px;
+}
+/* AKHIR DETAIL BERITA */
+
+/* GALERI */
+.content-galeri{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.content-galeri .card-top{
+    height: 300px;
+}
+
+.content-galeri .card-galeri{
+    border-radius: 5px;
+}
+
+.content-galeri .card-top img{
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.content-galeri .card-bottom h2{
+    font-size: 1pc;
+    text-align: center;
+    padding: 10px;
+}
+
+.content-galeri .title-galeri h1{
+    font-size: 3pc;
+    font-weight: 700;
+    color: #5FBAE9;
+    margin-bottom: 30px;
+}
+/* AKHIR GALERI */

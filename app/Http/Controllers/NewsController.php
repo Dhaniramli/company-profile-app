@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Galeri;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
-class HomeController extends Controller
+class NewsController extends Controller
 {
     public function index()
     {
-        return view('home',[
+        return view('news',[
+            'active' => 'news',
             'posts'=> Post::latest()->paginate(8)->withQueryString(),
-            'galeris' => Galeri::all(),
-            "title" => "Home",
-            "active" => "home",
         ]);
     }
 }

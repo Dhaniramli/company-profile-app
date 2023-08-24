@@ -9,11 +9,18 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     {{-- Bootstrap Icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
+    <!-- CSS FLICKITY-->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
     {{-- My Style --}}
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style_program_kegiatan.css">
+    <link rel="stylesheet" href="/css/style_profile.css">
+    <link rel="stylesheet" href="/css/style_masyarakat.css">
 
     <title>Company Profile</title>
 </head>
@@ -21,19 +28,9 @@
 <body>
     @include('partials/navbar')
 
-    @include('partials/carousel')
-
-    <div class="container mt-4">
-        @yield('content')
-    </div>
-
-    @include('partials/survey')
+    @yield('content')
 
     @include('partials/footer')
-
-    <a href="#" class="back-to-top" style="display: inline;">
-        <i class="fa fa-arrow-circle-up"></i>
-    </a>
 
     <script>
         jQuery(document).ready(function () {
@@ -65,6 +62,9 @@
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <!-- JavaScript FLICKITY -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </body>
 
 </html>

@@ -1,19 +1,27 @@
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item carousel-first active">
-            <img src="/img/one_piece.jpg" class="d-block w-100" alt="...">
+<div class="container-fluid px-0">
+    <div class="main-carousel"
+        data-flickity='{"autoPlay": 1500, "contain": true ,"prevNextButtons": false, "pageDots": false}'>
+        <div class="carousel-cell">
+            <div class="overlay">
+                <img src="/img/one_piece.jpg" alt="One Piece">
+            </div>
         </div>
-        <div class="carousel-item carousel-first">
-            <img src="/img/one_piece2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-cell">
+            <div class="overlay">
+                <img src="/img/one_piece2.jpg" alt="One Piece">
+            </div>
         </div>
-        <div class="carousel-item carousel-first">
-            <img src="/img/one_piece.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-cell">
+            <div class="overlay">
+                <img src="/img/one_piece.jpg" alt="One Piece">
+            </div>
         </div>
     </div>
-</div>
 
-<div class="cont-marquee">
-    <div class="marquee">
-        <p>Selamat Datang di Website Resmi Company Profile Name</p>
+    <div class="cont-marquee">
+        <div class="marquee">
+            <p>Selamat Datang di Website Resmi Company Profile Name</p>
+        </div>
     </div>
+
 </div>
