@@ -18,7 +18,7 @@
                         <p class="card-text">{{ Str::limit($post->excerpt, 80, '...') }}</p>
                     </div>
                     <div class="centered-button">
-                        <a href="/news/{{ $post->slug }}" class="btn btn-primary">Read more</a>
+                        <a href="/news/{{ $post->slug }}" class="btn btn-primary">Selengkapnya..</a>
                     </div>
                 </div>
             </div>

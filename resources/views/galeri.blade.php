@@ -15,7 +15,7 @@
                             <img src="{{ asset('storage/' . $galeri->image) }}" alt="Gambar">
                         </div>
                         <div class="card-bottom">
-                            <h2 class="card-jabatan">{{ $galeri->title }}</h2>
+                            <h2 class="card-jabatan">{{ Str::limit($galeri->title, 75, '...') }}</h2>
                         </div>
                     </div>
                 </div>

@@ -23,7 +23,7 @@
                             <p class="card-text">{{ Str::limit($post->excerpt, 80, '...') }}</p>
                         </div>
                         <div class="centered-button">
-                            <a href="/news/{{ $post->slug }}" class="btn btn-primary">Read more</a>
+                            <a href="/news/{{ $post->slug }}" class="btn btn-primary">Selengkapnya..</a>
                         </div>
                     </div>
                 </div>
@@ -67,6 +67,8 @@
         </div>
     </div>
 
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#5FBAE9" fill-opacity="1" d="M0,288L80,261.3C160,235,320,181,480,181.3C640,181,800,235,960,256C1120,277,1280,267,1360,261.3L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+
     <div class="container-fluid survey px-0">
         <div class="container survey-content">
             <div class="col-lg-12">
@@ -96,5 +98,7 @@
             </div>
         </div>
     </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#5FBAE9" fill-opacity="1" d="M0,256L80,234.7C160,213,320,171,480,144C640,117,800,107,960,117.3C1120,128,1280,160,1360,176L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
 
     @endsection

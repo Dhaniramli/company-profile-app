@@ -272,20 +272,10 @@ body {
     /* height: 100%; */
 }
 
-/* .card-img {
-    border: none;
-    border-radius: 5px;
+.centered-button a:hover{
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 }
 
-.card-img img {
-    border-radius: 5px;
-}
-
-.card-img h2 {
-    margin-top: 10px;
-    font-size: 1pc;
-    text-align: center;
-} */
 
 
 
@@ -294,11 +284,11 @@ body {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: auto;
+    /* height: auto; */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 200px;
+    /* margin-bottom: 200px; */
 }
 
 @media (max-width: 767px) {
@@ -382,9 +372,6 @@ footer iframe{
 
 /* AKHIRFOOTER */
 
-/* BACK TOP */
-
-/* AKHIR BACK TOP */
 
 /* CAROUSEL GALERY */
 .cursor-pointer {
@@ -392,7 +379,7 @@ footer iframe{
 }
 
 .carousel-main {
-    margin-bottom: 100px;
+    margin-bottom: -100px;
     height: auto;
 }
 
