@@ -4,10 +4,10 @@
 
 <div class="container content-post">
     <div class="row justify-content-center mb-5">
-        <div class="col-md-8">
-            <h2 class="mb-3">{{ $post->title }}</h2>
+        <h2 class="mb-3">{{ $post->title }}</h2>
+        <div class="col-md-10 mt-4">
             {{-- @if ($post->image) --}}
-            <div class="" style="max-height: 350px; overflow:hidden;">
+            <div class="img-post">
                 <img src="{{ asset('storage/' . $post->image) }}" alt=""
                     class="img-fluid">
             </div>

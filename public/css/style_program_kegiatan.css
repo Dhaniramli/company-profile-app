@@ -1,58 +1,92 @@
 /* BERITA KEGIATAN */
-.news-kegiatan{
+.news-kegiatan {
     margin-top: 100px;
     margin-bottom: 100px;
 }
 
-.content-news h1{
+.card-news img {
+    height: 165px;
+    width: 100%;
+}
+
+.content-news h1 {
     font-size: 3pc;
     font-weight: 700;
     color: #5FBAE9;
     margin-bottom: 30px;
 }
 
-.news-kegiatan{
+.card-title-news {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+    /* Efek transisi ketika warna berubah */
+}
+
+.card-title-news:hover {
+    color: #5FBAE9;
+}
+
+.news-kegiatan {
     margin-top: 100px;
     margin-bottom: 100px;
 }
+
 /* AKHIR BERITA KEGIATAN */
 
 /* DETAIL BERITA */
-.content-post{
+.content-post {
     margin-top: 80px;
 }
+
+.content-post h2{
+    text-align: center;
+    font-size: 2pc;
+    font-weight: 800;
+    color: #5FBAE9;
+}
+
+.content-post .img-post{
+    border-radius: 5px;
+    max-height: 400px;
+    overflow: hidden;
+    width: 100%;
+}
+
 /* AKHIR DETAIL BERITA */
 
 /* GALERI */
-.content-galeri{
+.content-galeri {
     margin-top: 100px;
     margin-bottom: 100px;
 }
 
-.content-galeri .card-top{
+.content-galeri .card-top {
     height: 300px;
 }
 
-.content-galeri .card-galeri{
+.content-galeri .card-galeri {
     border-radius: 5px;
 }
 
-.content-galeri .card-top img{
+.content-galeri .card-top img {
     height: 100%;
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
-.content-galeri .card-bottom h2{
+
+.content-galeri .card-bottom h2 {
     font-size: 1pc;
     text-align: center;
     padding: 10px;
 }
 
-.content-galeri .title-galeri h1{
+.content-galeri .title-galeri h1 {
     font-size: 3pc;
     font-weight: 700;
     color: #5FBAE9;
     margin-bottom: 30px;
 }
+
 /* AKHIR GALERI */

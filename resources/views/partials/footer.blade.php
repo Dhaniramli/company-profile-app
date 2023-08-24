@@ -12,10 +12,12 @@
             </div>
             <div class="col-lg-3">
                 <h3>Statistik Pengunjung</h3>
-                <p>Pengunjung Hari Ini : 45</p>
-                <p>Pengunjung Minggu Ini : 45</p>
-                <p>Pengunjung Bulan Ini : 45</p>
-                <p>Total Pengunjung : 45</p>
+                <div class="isi mt-4">
+                    <p>Pengunjung Hari Ini : 45</p>
+                    <p>Pengunjung Minggu Ini : 45</p>
+                    <p>Pengunjung Bulan Ini : 45</p>
+                    <p>Total Pengunjung : 45</p>
+                </div>
             </div>
             <div class="col-lg-3">
                 <iframe

@@ -10,13 +10,15 @@
             @foreach ($posts as $post)
             <div class="col-lg-3 col-md-4 mb-3">
                 <div class="card card-news">
-                    <img src="https://source.unsplash.com/500x300?programming" class="card-img-top" alt="">
+                    <img src="{{ asset('storage/' . $post->image) }}" alt="">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $post->title }}</h5>
-                        <p class="card-text">{{ $post->excerpt }}</p>
-                        <div class="centered-button">
-                            <a href="/news/{{ $post->slug }}" class="btn btn-primary">Read more</a>
-                        </div>
+                        <a href="/news/{{ $post->slug }}" class="card-title-news">
+                            <h5>{{ Str::limit($post->title, 75, '...') }}</h5>
+                        </a>
+                        <p class="card-text">{{ Str::limit($post->excerpt, 80, '...') }}</p>
+                    </div>
+                    <div class="centered-button">
+                        <a href="/news/{{ $post->slug }}" class="btn btn-primary">Read more</a>
                     </div>
                 </div>
             </div>

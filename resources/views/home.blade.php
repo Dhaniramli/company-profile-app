@@ -17,7 +17,9 @@
                     <div class="card card-news">
                         <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" alt="">
                         <div class="card-body">
-                            <h5 class="card-title">{{ Str::limit($post->title, 75, '...') }}</h5>
+                            <a href="/news/{{ $post->slug }}" class="card-title-posts">
+                                <h5>{{ Str::limit($post->title, 75, '...') }}</h5>
+                            </a>
                             <p class="card-text">{{ Str::limit($post->excerpt, 80, '...') }}</p>
                         </div>
                         <div class="centered-button">
