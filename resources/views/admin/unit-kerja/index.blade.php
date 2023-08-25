@@ -29,21 +29,21 @@
                     <thead>
                         <tr>
                             <th class="col-1 align-middle text-center">No</th>
-                            <th class="col-6">Deskripsi Unit Kerja</th>
+                            <th class="col-6">Judul</th>
                             <th class="col-3">Lokasi</th>
                             <th class="col-2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach ($galeris as $galeri)
+                        @foreach ($unitKerjas as $unitKerja)
                         <tr>
                             <td class="col-1 align-middle text-center">{{ $loop->iteration }}</td>
-                            <td>{{ $galeri->title }}</td>
-                            <td class="align-middle text-center"><img src="{{ asset('storage/' . $galeri->image) }}" alt="" style="height: 100px; width: 200px;"></td>
+                            <td>{{ $unitKerja->judul }}</td>
+                            <td>{{ $unitKerja->lokasi }}</td>
                             <td class="align-middle text-center">
-                                <a href="/admin/galeri/{{ $galeri->id }}/edit" class="btn btn-warning btn-circle"><i class="fa fa-keyboard"
+                                <a href="/admin/unit-kerja/{{ $unitKerja->slug }}/edit" class="btn btn-warning btn-circle"><i class="fa fa-keyboard"
                                         aria-hidden="true"></i></a>
-                                <form action="/admin/galeri/{{ $galeri->id }}" method="POST" class="d-inline">
+                                <form action="/admin/unit-kerja/{{ $unitKerja->slug }}" method="POST" class="d-inline">
                                     @method('delete')
                                     @csrf
                                     <button class="btn btn-danger btn-circle" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"
@@ -51,7 +51,7 @@
                                 </form>
                             </td>
                         </tr>
-                        @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>

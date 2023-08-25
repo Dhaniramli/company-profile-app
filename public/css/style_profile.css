@@ -108,9 +108,18 @@
 
 /* UNIT KERJA */
 .content-unit-kerja {
-    margin-top: 100px;
+    margin-top: 150px;
     margin-bottom: 50px;
 }
+
+.card-unit-kerja {
+    transition: transform 0.3s ease;
+}
+
+.card-unit-kerja:hover {
+    transform: translateY(-10px); /* Atur seberapa jauh kartu naik saat di hover */
+}
+
 
 .title-unit-kerja {
     margin-bottom: 50px;
@@ -134,6 +143,41 @@
 
 .card-unit-kerja .card-top {
     background-color: #5FBAE9;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.card-unit-kerja .card-bottom{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-unit-detail{
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+.content-unit-detail h1{
+    font-size: 25px;
+    font-weight: 600;
+    color: #5FBAE9;
+}
+
+.content-unit-detail h2{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.content-unit-detail h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content-unit-detail .unit-detail-bottom{
+    margin-top: 70px;
+}
 /* AKHIR UNIT KERJA */

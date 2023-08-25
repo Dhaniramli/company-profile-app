@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('unit_kerjas', function (Blueprint $table) {
             $table->id();
+            $table->string('judul');
+            $table->string('slug')->unique();
+            $table->string('lokasi');
+            $table->string('tugas_dan_fungsi');
             $table->timestamps();
         });
     }

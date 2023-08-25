@@ -7,9 +7,11 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\GalerisController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\UnitKerjaController;
 use App\Http\Controllers\AdminGaleriController;
 use App\Http\Controllers\AdminVisiMisiController;
 use App\Http\Controllers\AdminUnitKerjaController;
+use App\Models\UnitKerja;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,11 +60,8 @@ Route::get('/pejabat-struktural', function(){
     ]);
 });
 
-Route::get('/unit-kerja', function(){
-    return view('unit_kerja',[
-        'active' => 'unit-kerja',
-    ]);
-});
+Route::get('/unit-kerja', [UnitKerjaController::class, 'index']);
+Route::get('/unit-kerja/{unitKerja}', [UnitKerjaController::class, 'show']);
 
 Route::get('/galeri-kegiatan', [GalerisController::class, 'index']);
 
@@ -85,10 +84,6 @@ Route::get('/admin', function () {
     return view('admin.index');
 });
 
-// Route::get('/admin/visi-misi', function () {
-//     return view('admin.visi-misi.index');
-// });
-
 Route::resource('/admin/visi-misi', AdminVisiMisiController::class);
 
 Route::get('/admin/posts/checkSlug', [AdminPostController::class, 'checkSlug']);
@@ -96,5 +91,6 @@ Route::resource('/admin/posts', AdminPostController::class);
 
 Route::resource('/admin/galeri', AdminGaleriController::class);
 
+Route::get('/admin/unit-kerja/checkSlugUnit', [AdminUnitKerjaController::class, 'checkSlugUnit']);
 Route::resource('/admin/unit-kerja', AdminUnitKerjaController::class);
 

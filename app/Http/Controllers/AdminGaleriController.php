@@ -43,7 +43,7 @@ class AdminGaleriController extends Controller
 
         Galeri::create($validatedData);
 
-        return redirect('/admin/galeri')->with('success', 'berhasil ditambahkan!');
+        return redirect('/admin/galeri')->with('success', 'Berhasil ditambahkan!');
     }
 
     /**

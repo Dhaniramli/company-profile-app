@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\UnitKerja;
 use Illuminate\Http\Request;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class AdminUnitKerjaController extends Controller
 {
@@ -12,7 +13,9 @@ class AdminUnitKerjaController extends Controller
      */
     public function index()
     {
-        return view('admin.unit-kerja.index');
+        return view('admin.unit-kerja.index',[
+            'unitKerjas' => UnitKerja::all(),
+        ]);
     }
 
     /**
@@ -28,7 +31,16 @@ class AdminUnitKerjaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'judul' => 'required|max:255',
+            'slug' => 'required|unique:unit_kerjas',
+            'lokasi' => 'required|max:255',
+            'tugas_dan_fungsi' => 'required',
+        ]);
+
+        UnitKerja::create($validatedData);
+
+        return redirect('/admin/unit-kerja')->with('success', 'Berhasil ditambahkan!');
     }
 
     /**
@@ -44,7 +56,9 @@ class AdminUnitKerjaController extends Controller
      */
     public function edit(UnitKerja $unitKerja)
     {
-        //
+        return view('admin.unit-kerja.edit', [
+            'unitKerja' => $unitKerja,
+        ]);
     }
 
     /**
@@ -52,7 +66,21 @@ class AdminUnitKerjaController extends Controller
      */
     public function update(Request $request, UnitKerja $unitKerja)
     {
-        //
+        $rules = [
+            'judul' => 'required|max:255',
+            'lokasi' => 'required|max:255',
+            'tugas_dan_fungsi' => 'required',
+        ];
+
+        if ($request->slug != $unitKerja->slug) {
+            $rules['slug'] = 'required|unique:unit_kerjas';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        UnitKerja::where('id', $unitKerja->id)->update($validatedData);
+
+        return redirect('/admin/unit-kerja')->with('success', 'Unit Kerja diperbarui!');
     }
 
     /**
@@ -60,6 +88,16 @@ class AdminUnitKerjaController extends Controller
      */
     public function destroy(UnitKerja $unitKerja)
     {
-        //
+       
+        UnitKerja::destroy($unitKerja->id);
+
+        return redirect('/admin/unit-kerja')->with('success', 'Berhasil dihapus!');
+    }
+
+    public function checkSlugUnit(Request $request)
+    {
+        $slug = SlugService::createSlug(UnitKerja::class, 'slug', $request->judul);
+        
+        return response()->json(['slug' => $slug]);
     }
 }

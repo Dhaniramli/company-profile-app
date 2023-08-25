@@ -18,6 +18,7 @@
                     </div>
                     @enderror
                 </div>
+                
                 <div class="mb-3">
                     <label for="slug" class="form-label">Slug</label>
                     <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug"
@@ -28,6 +29,7 @@
                     </div>
                     @enderror
                 </div>
+
                 <div class="mb-3">
                     <label for="image" class="form-label">Post Image</label>
                     <input type="hidden" name="oldImage" value="{{ $post->image }}">

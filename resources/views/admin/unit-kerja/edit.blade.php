@@ -2,16 +2,18 @@
 
 @section('content')
 <div class="container-fluid">
-    <h1>Buat Berita Baru</h1>
+    <h1>Edit Unit Kerja</h1>
     <div class="row">
         <div class="col-lg-8">
-            <form method="POST" action="/admin/posts" enctype="multipart/form-data">
+            <form method="POST" action="/admin/unit-kerja/{{ $unitKerja->slug }}" enctype="multipart/form-data">
                 @csrf
+                @method('put')
+
                 <div class="mb-3">
-                    <label for="title" class="form-label">Judul Berita</label>
-                    <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
-                        required value="{{ old('title') }}">
-                    @error('title')
+                    <label for="judul" class="form-label">Judul</label>
+                    <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" name="judul"
+                        required value="{{ old('judul', $unitKerja->judul) }}">
+                    @error('judul')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -19,11 +21,11 @@
                 </div>
 
                 <input type="hidden" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug"
-                required value="{{ old('slug') }}" readonly>
+                required value="{{ old('slug', $unitKerja->slug) }}">
                 {{-- <div class="mb-3">
                     <label for="slug" class="form-label">Slug</label>
                     <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug"
-                        required value="{{ old('slug') }}" readonly>
+                        required value="{{ old('slug', $post->slug) }}">
                     @error('slug')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -32,11 +34,10 @@
                 </div> --}}
 
                 <div class="mb-3">
-                    <label for="image" class="form-label">Gambar</label>
-                    <img class="img-preview img-fluid mb-3 col-sm-5">
-                    <input class="form-control" type="file" id="image" name="image" @error('image') is-invalid @enderror
-                        onchange="previewImage()">
-                    @error('image')
+                    <label for="lokasi" class="form-label">Lokasi</label>
+                    <input type="text" class="form-control @error('lokasi') is-invalid @enderror" id="lokasi"
+                        name="lokasi" required value="{{ old('lokasi', $unitKerja->lokasi) }}">
+                    @error('lokasi')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -44,26 +45,27 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="body" class="form-label">Isi Berita</label>
-                    @error('body')
+                    <label for="tugas_dan_fungsi" class="form-label">Tugas dan Fungsi</label>
+                    @error('tugas_dan_fungsi')
                     <p class="text-danger">{{ $message }}</p>
                     @enderror
-                    <input id="body" type="hidden" name="body" value="{{ old('body') }}">
-                    <trix-editor input="body"></trix-editor>
+                    <input id="tugas_dan_fungsi" type="hidden" name="tugas_dan_fungsi"
+                        value="{{ old('tugas_dan_fungsi', $unitKerja->tugas_dan_fungsi) }}">
+                    <trix-editor input="tugas_dan_fungsi"></trix-editor>
                 </div>
 
-                <button type="submit" class="btn btn-primary mb-4">Buat</button>
+                <button type="submit" class="btn btn-primary mb-4">Simpan</button>
             </form>
         </div>
     </div>
 </div>
 
 <script>
-    const title = document.querySelector('#title');
+    const lokasi = document.querySelector('#lokasi');
     const slug = document.querySelector('#slug');
 
-    title.addEventListener('change', function () {
-        fetch('/admin/posts/checkSlug?title=' + title.value)
+    lokasi.addEventListener('change', function () {
+        fetch('/dashboard/posts/checkSlug?lokasi=' + lokasi.value)
             .then(response => response.json())
             .then(data => slug.value = data.slug)
     });
@@ -87,5 +89,4 @@
     }
 
 </script>
-
 @endsection
