@@ -18,7 +18,7 @@
             <span>Dashboard</span></a>
     </li>
 
-    <li class="nav-item {{ (Request::is('admin/visi-misi*') || Request::is('admin/unit-kerja*')) ? 'active' : '' }}">
+    <li class="nav-item {{ (Request::is('admin/visi-misi*') || Request::is('admin/unit-kerja*') || Request::is('admin/pejabat-struktural')) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
             aria-expanded="true" aria-controls="collapseOne">
             <i class="fas fa-user"></i>
@@ -31,7 +31,7 @@
                 <a class="collapse-item" href="#">Kedudukan & Alamat</a>
                 <a class="collapse-item" href="#">Struktur Organisasi</a>
                 <a class="collapse-item" href="#">Denah Kantor</a>
-                <a class="collapse-item" href="#">Pejabat Struktural</a>
+                <a class="collapse-item {{ Request::is('admin/pejabat-struktural*') ? 'active' : '' }}" href="/admin/pejabat-struktural">Pejabat Struktural</a>
                 <a class="collapse-item {{ Request::is('admin/unit-kerja*') ? 'active' : '' }}" href="/admin/unit-kerja">Unit Kerja</a>
             </div>
         </div>

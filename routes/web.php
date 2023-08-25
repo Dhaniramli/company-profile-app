@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\UnitKerja;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
@@ -11,7 +12,8 @@ use App\Http\Controllers\UnitKerjaController;
 use App\Http\Controllers\AdminGaleriController;
 use App\Http\Controllers\AdminVisiMisiController;
 use App\Http\Controllers\AdminUnitKerjaController;
-use App\Models\UnitKerja;
+use App\Http\Controllers\AdminPejabatStrukturalController;
+use App\Http\Controllers\PejabatStrukturalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,11 +56,7 @@ Route::get('/denah-kantor', function(){
     ]);
 });
 
-Route::get('/pejabat-struktural', function(){
-    return view('pejabat_struktural',[
-        'active' => 'pejabat-struktural',
-    ]);
-});
+Route::get('/pejabat-struktural', [PejabatStrukturalController::class, 'index']);
 
 Route::get('/unit-kerja', [UnitKerjaController::class, 'index']);
 Route::get('/unit-kerja/{unitKerja}', [UnitKerjaController::class, 'show']);
@@ -94,3 +92,4 @@ Route::resource('/admin/galeri', AdminGaleriController::class);
 Route::get('/admin/unit-kerja/checkSlugUnit', [AdminUnitKerjaController::class, 'checkSlugUnit']);
 Route::resource('/admin/unit-kerja', AdminUnitKerjaController::class);
 
+Route::resource('/admin/pejabat-struktural', AdminPejabatStrukturalController::class);
