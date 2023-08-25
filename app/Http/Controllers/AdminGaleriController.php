@@ -37,7 +37,7 @@ class AdminGaleriController extends Controller
         ]);
 
         if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('galeri-images');
+            $validatedData['image'] = $request->file('image')->store('gambar-galeri');
         }
 
 
@@ -80,7 +80,7 @@ class AdminGaleriController extends Controller
             if($request->oldImage){
                 Storage::delete($request->oldImage);
             }
-            $validatedData['image'] = $request->file('image')->store('galeri-images');
+            $validatedData['image'] = $request->file('image')->store('gambar-galeri');
         }
 
 

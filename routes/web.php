@@ -77,7 +77,7 @@ Route::get('/mitra-kerja', function(){
     ]);
 });
 
-Route::get('/posts', [PostController::class, 'index']);
+// Route::get('/posts', [PostController::class, 'index']);
 Route::get('/news/{post}', [PostController::class, 'show']);
 
 Route::get('/admin', function () {

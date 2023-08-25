@@ -41,7 +41,7 @@ class AdminPostController extends Controller
         ]);
 
         if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('post-images');
+            $validatedData['image'] = $request->file('image')->store('gambar-berita');
         }
 
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 100);
@@ -92,7 +92,7 @@ class AdminPostController extends Controller
             if($request->oldImage){
                 Storage::delete($request->oldImage);
             }
-            $validatedData['image'] = $request->file('image')->store('post-images');
+            $validatedData['image'] = $request->file('image')->store('gambar-berita');
         }
 
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 100);
