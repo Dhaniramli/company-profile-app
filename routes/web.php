@@ -12,8 +12,11 @@ use App\Http\Controllers\UnitKerjaController;
 use App\Http\Controllers\AdminGaleriController;
 use App\Http\Controllers\AdminVisiMisiController;
 use App\Http\Controllers\AdminUnitKerjaController;
-use App\Http\Controllers\AdminPejabatStrukturalController;
+use App\Http\Controllers\AdminOfficePlanController;
+use App\Http\Controllers\AdminOrganizationalStructureController;
 use App\Http\Controllers\PejabatStrukturalController;
+use App\Http\Controllers\AdminPejabatStrukturalController;
+use App\Http\Controllers\OfficePlanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,11 +53,7 @@ Route::get('/struktur-organisasi', function(){
     ]);
 });
 
-Route::get('/denah-kantor', function(){
-    return view('denah_kantor',[
-        'active' => 'denah-kantor',
-    ]);
-});
+Route::get('/denah-kantor', [OfficePlanController::class, 'index']);
 
 Route::get('/pejabat-struktural', [PejabatStrukturalController::class, 'index']);
 
@@ -93,3 +92,7 @@ Route::get('/admin/unit-kerja/checkSlugUnit', [AdminUnitKerjaController::class, 
 Route::resource('/admin/unit-kerja', AdminUnitKerjaController::class);
 
 Route::resource('/admin/pejabat-struktural', AdminPejabatStrukturalController::class);
+
+Route::resource('/admin/denah-kantor', AdminOfficePlanController::class);
+
+Route::resource('/admin/struktur-organisasi', AdminOrganizationalStructureController::class);
