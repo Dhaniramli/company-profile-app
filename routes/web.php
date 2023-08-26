@@ -17,6 +17,7 @@ use App\Http\Controllers\AdminOrganizationalStructureController;
 use App\Http\Controllers\PejabatStrukturalController;
 use App\Http\Controllers\AdminPejabatStrukturalController;
 use App\Http\Controllers\OfficePlanController;
+use App\Http\Controllers\OrganizationalStructureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,11 +48,7 @@ Route::get('/kedudukan', function(){
     ]);
 });
 
-Route::get('/struktur-organisasi', function(){
-    return view('struktur_organisasi',[
-        'active' => 'struktur-organisasi',
-    ]);
-});
+Route::get('/struktur-organisasi', [OrganizationalStructureController::class, 'index']);
 
 Route::get('/denah-kantor', [OfficePlanController::class, 'index']);
 
