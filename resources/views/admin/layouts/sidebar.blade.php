@@ -18,7 +18,7 @@
             <span>Dashboard</span></a>
     </li>
 
-    <li class="nav-item {{ (Request::is('admin/visi-misi*') || Request::is('admin/unit-kerja*') || Request::is('admin/pejabat-struktural*') || Request::is('admin/denah-kantor*') || Request::is('admin/struktur-organisasi*')) ? 'active' : '' }}">
+    <li class="nav-item {{ (Request::is('admin/visi-misi*') || Request::is('admin/unit-kerja*') || Request::is('admin/pejabat-struktural*') || Request::is('admin/denah-kantor*') || Request::is('admin/struktur-organisasi*') || Request::is('admin/tugas-fungsi*') || Request::is('admin/kedudukan-alamat*')) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
             aria-expanded="true" aria-controls="collapseOne">
             <i class="fas fa-user"></i>
@@ -27,8 +27,8 @@
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item {{ Request::is('admin/visi-misi*') ? 'active' : '' }}" href="/admin/visi-misi">Visi & Misi</a>
-                <a class="collapse-item" href="#">Tugas & Fungsi</a>
-                <a class="collapse-item" href="#">Kedudukan & Alamat</a>
+                <a class="collapse-item {{ Request::is('admin/tugas-fungsi*') ? 'active' : '' }}" href="/admin/tugas-fungsi">Tugas & Fungsi</a>
+                <a class="collapse-item {{ Request::is('admin/kedudukan-alamat*') ? 'active' : '' }}" href="/admin/kedudukan-alamat">Kedudukan & Alamat</a>
                 <a class="collapse-item {{ Request::is('admin/struktur-organisasi*') ? 'active' : '' }}" href="/admin/struktur-organisasi">Struktur Organisasi</a>
                 <a class="collapse-item {{ Request::is('admin/denah-kantor*') ? 'active' : '' }}" href="/admin/denah-kantor">Denah Kantor</a>
                 <a class="collapse-item {{ Request::is('admin/pejabat-struktural*') ? 'active' : '' }}" href="/admin/pejabat-struktural">Pejabat Struktural</a>

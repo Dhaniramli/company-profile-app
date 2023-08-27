@@ -9,15 +9,17 @@ use App\Http\Controllers\GalerisController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\UnitKerjaController;
+use App\Http\Controllers\OfficePlanController;
 use App\Http\Controllers\AdminGaleriController;
 use App\Http\Controllers\AdminVisiMisiController;
 use App\Http\Controllers\AdminUnitKerjaController;
 use App\Http\Controllers\AdminOfficePlanController;
-use App\Http\Controllers\AdminOrganizationalStructureController;
+use App\Http\Controllers\AdminJobFunctionController;
 use App\Http\Controllers\PejabatStrukturalController;
 use App\Http\Controllers\AdminPejabatStrukturalController;
-use App\Http\Controllers\OfficePlanController;
 use App\Http\Controllers\OrganizationalStructureController;
+use App\Http\Controllers\AdminOrganizationalStructureController;
+use App\Http\Controllers\JobFunctionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,11 +38,7 @@ Route::get('/news', [NewsController::class, 'index']);
 
 Route::get('/visi-misi', [VisiMisiController::class, 'index']);
 
-Route::get('/tugas-fungsi', function(){
-    return view('tugas_fungsi',[
-        'active' => 'tugas-fungsi',
-    ]);
-});
+Route::get('/tugas-fungsi', [JobFunctionController::class, 'index']);
 
 Route::get('/kedudukan', function(){
     return view('kedudukan',[
@@ -93,3 +91,6 @@ Route::resource('/admin/pejabat-struktural', AdminPejabatStrukturalController::c
 Route::resource('/admin/denah-kantor', AdminOfficePlanController::class);
 
 Route::resource('/admin/struktur-organisasi', AdminOrganizationalStructureController::class);
+
+Route::resource('/admin/tugas-fungsi', AdminJobFunctionController::class);
+
