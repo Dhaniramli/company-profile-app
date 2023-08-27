@@ -3,7 +3,7 @@
 @section('content')
 <div class="container content-struktur-organisasi">
     <div class="title-struktur-organisasi justify-content-center">
-        <h1 class="text-center">Struktur Organisasi</h1>
+        <h1 class="text-center">STRUKTUR ORGANISASI</h1>
     </div>
     <div class="struktur-organisasi-img justify-content-center">
         @if ($struktur_organisasi->count())

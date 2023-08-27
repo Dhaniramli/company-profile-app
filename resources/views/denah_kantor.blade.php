@@ -3,7 +3,7 @@
 @section('content')
 <div class="container denah-kantor">
     <div class="title-denah-kantor justify-content-center">
-        <h1 class="text-center">Denah Kantor</h1>
+        <h1 class="text-center">DENAH KANTOR</h1>
     </div>
     <div class="denah-img justify-content-center">
         @if ($office_plan->count())

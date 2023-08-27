@@ -3,7 +3,7 @@
 @section('content')
 <div class="container content-data-pejabat">
     <div class="title-data-pejabat justify-content-center">
-        <h1 class="text-center">Data Pejabat</h1>
+        <h1 class="text-center">DATA PEJABAT</h1>
     </div>
     <div class="container isi-data-pejabat">
         <div class="col-lg-12">

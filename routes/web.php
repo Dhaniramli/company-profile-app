@@ -19,7 +19,9 @@ use App\Http\Controllers\PejabatStrukturalController;
 use App\Http\Controllers\AdminPejabatStrukturalController;
 use App\Http\Controllers\OrganizationalStructureController;
 use App\Http\Controllers\AdminOrganizationalStructureController;
+use App\Http\Controllers\AdminPositionAddressController;
 use App\Http\Controllers\JobFunctionController;
+use App\Http\Controllers\PositionAddressController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,11 +42,7 @@ Route::get('/visi-misi', [VisiMisiController::class, 'index']);
 
 Route::get('/tugas-fungsi', [JobFunctionController::class, 'index']);
 
-Route::get('/kedudukan', function(){
-    return view('kedudukan',[
-        'active' => 'kedudukan',
-    ]);
-});
+Route::get('/kedudukan', [PositionAddressController::class, 'index']);
 
 Route::get('/struktur-organisasi', [OrganizationalStructureController::class, 'index']);
 
@@ -93,4 +91,6 @@ Route::resource('/admin/denah-kantor', AdminOfficePlanController::class);
 Route::resource('/admin/struktur-organisasi', AdminOrganizationalStructureController::class);
 
 Route::resource('/admin/tugas-fungsi', AdminJobFunctionController::class);
+
+Route::resource('/admin/kedudukan-alamat', AdminPositionAddressController::class);
 
