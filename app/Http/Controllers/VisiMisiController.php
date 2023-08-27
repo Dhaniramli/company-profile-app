@@ -11,7 +11,7 @@ class VisiMisiController extends Controller
     {
         return view('visi_misi',[
             'active' => 'visi-misi',
-            // 'visiMisi'=> VisiMisi::all(),
+            'vision_mission'=> VisiMisi::all(),
         ]);
     }
 }

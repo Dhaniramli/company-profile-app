@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\VisiMisi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminVisiMisiController extends Controller
 {
@@ -13,7 +14,7 @@ class AdminVisiMisiController extends Controller
     public function index()
     {
         return view('admin.visi-misi.index',[
-            'dataVisiMisi' => VisiMisi::all(),
+            'visi_misi' => VisiMisi::all(),
         ]);
     }
 
@@ -22,7 +23,7 @@ class AdminVisiMisiController extends Controller
      */
     public function create()
     {
-        return view('admin.visi-misi.create');
+        //
     }
 
     /**
@@ -30,17 +31,15 @@ class AdminVisiMisiController extends Controller
      */
     public function store(Request $request)
     {
-
-        // dd($request);
-
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'body' => 'required',
+            'image' => 'image'
         ]);
 
-        // if($request->id === '1'){
-            // VisiMisi::where('id', 1)->update($validatedData);
-        // }
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('vision-mission-images');
+        }
 
         VisiMisi::create($validatedData);
 
@@ -68,14 +67,24 @@ class AdminVisiMisiController extends Controller
      */
     public function update(Request $request, VisiMisi $visiMisi)
     {
-        $validatedData = $request->validate([
+        $rules = [
             'title' => 'required|max:255',
+            'image' => 'image',
             'body' => 'required',
-        ]);
+        ];
+        
+        $validatedData = $request->validate($rules);
+
+        if ($request->file('image')) {
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('vision-mission-images');
+        }
 
         VisiMisi::where('id', $visiMisi->id)->update($validatedData);
 
-        return redirect('/admin/visi-misi')->with('success', 'New post has been added!');
+        return redirect('/admin/visi-misi')->with('success', 'Berhasil disimpan!');
     }
 
     /**
