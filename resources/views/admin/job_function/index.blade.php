@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <h1 class="text-center mb-5">Tugas dan Fungsi</h1>
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
             <form method="POST" action="/admin/tugas-fungsi{{ ($job_function->count() ? '/1' : '') }}"
                 enctype="multipart/form-data">
                 @csrf
@@ -23,6 +23,7 @@
                     <input id="body" type="hidden" name="body"
                         value="{{ old('body', ($job_function->count() ? $job_function[0]->body : '')) }}">
                     <trix-editor input="body"></trix-editor>
+                    {{-- <textarea name="" cols="30" rows="10" id="editor"></textarea> --}}
                 </div>
 
                 <button type="submit" class="btn btn-primary mb-4">Simpan</button>

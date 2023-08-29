@@ -11,6 +11,10 @@
     justify-content: center;
 }
 
+.visi-misi img{
+    width: 100%;
+}
+
 .visi-misi h1 {
     margin-top: 10px;
     font-size: 2pc;
