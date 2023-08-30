@@ -8,7 +8,13 @@ use Illuminate\Http\Request;
 class ReportController extends Controller
 {
     public function index(){
-        return view('create_report',[
+        return view('report.index',[
+            'active' => 'pengaduan',
+        ]);
+    }
+
+    public function create(){
+        return view('report.create',[
             'active' => 'pengaduan',
         ]);
     }
@@ -39,7 +45,7 @@ class ReportController extends Controller
 
     
     public function show(){
-        return view('report_status',[
+        return view('report.status',[
             'active' => 'pengaduan',
             'reports' => Report::all()
         ]);

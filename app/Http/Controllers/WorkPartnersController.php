@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class WorkPartnersController extends Controller
 {
     public function index(){
-        return view('mitra_kerja',[
+        return view('work_partners.index',[
             'active' => 'mitra-kerja',
             'workPartners' => WorkPartners::all()
         ]);

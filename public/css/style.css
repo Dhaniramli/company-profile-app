@@ -245,7 +245,7 @@ body {
     border-radius: 5px;
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
     border: none;
-    height: 370px;
+    max-height: 370px;
 }
 
 .card-news img {
@@ -391,7 +391,11 @@ footer iframe{
 }
 
 footer h3{
-    font-size: 1.5pc;
+    font-size: 1.2pc;
+}
+
+footer p{
+    font-size: 15px;
 }
 
 /* AKHIRFOOTER */
@@ -513,7 +517,7 @@ footer h3{
 }
 
 .carousel-galeri .card-body{
-    height: 90px;
+    max-height: 90px;
     padding-top: 15px;
     padding-bottom: 50px;
     overflow: hidden;

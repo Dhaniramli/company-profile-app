@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PositionAddressController extends Controller
 {
     public function index(){
-        return view('kedudukan',[
+        return view('position_address.index',[
             'active' => 'kedudukan',
             'positionAddress' => PositionAddress::all()
         ]);

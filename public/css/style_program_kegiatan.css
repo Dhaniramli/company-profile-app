@@ -67,7 +67,7 @@
 
 .content-galeri .card-galeri {
     border-radius: 5px;
-    height: 370px;
+    max-height: 370px;
 }
 
 .content-galeri .card-top img {

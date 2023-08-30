@@ -1,10 +1,8 @@
 <?php
 
-use App\Models\UnitKerja;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ReportController;
@@ -44,6 +42,7 @@ use App\Http\Controllers\AdminOrganizationalStructureController;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/news', [NewsController::class, 'index']);
+Route::get('/news/{post}', [NewsController::class, 'show']);
 
 Route::get('/visi-misi', [VisiMisiController::class, 'index']);
 
@@ -62,13 +61,8 @@ Route::get('/unit-kerja/{unitKerja}', [UnitKerjaController::class, 'show']);
 
 Route::get('/galeri-kegiatan', [GalerisController::class, 'index']);
 
-Route::get('/pengaduan', function(){
-    return view('pengaduan',[
-        'active' => 'pengaduan',
-    ]);
-})->middleware('auth');
-
-Route::get('/pengaduan/create', [ReportController::class, 'index'])->middleware('auth');
+Route::get('/pengaduan', [ReportController::class, 'index'])->middleware('auth');
+Route::get('/pengaduan/create', [ReportController::class, 'create'])->middleware('auth');
 Route::post('/pengaduan/create', [ReportController::class, 'store'])->middleware('auth');
 Route::get('/pengaduan-status', [ReportController::class, 'show'])->middleware('auth');
 
@@ -79,8 +73,7 @@ Route::get('/sakip', [DocumentsPublicationsController::class, 'index']);
 
 Route::get('/mitra-kerja', [WorkPartnersController::class, 'index']);
 
-// Route::get('/posts', [PostController::class, 'index']);
-Route::get('/news/{post}', [PostController::class, 'show']);
+
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware('admin');
 
@@ -103,6 +96,8 @@ Route::resource('/admin/struktur-organisasi', AdminOrganizationalStructureContro
 Route::resource('/admin/tugas-fungsi', AdminJobFunctionController::class)->middleware('admin');
 
 Route::resource('/admin/kedudukan-alamat', AdminPositionAddressController::class)->middleware('admin');
+
+
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PejabatStrukturalController extends Controller
 {
     public function index(){
-        return view('pejabat_struktural',[
+        return view('structural_officials.index',[
             'active' => 'pejabat-struktural',
             'pejabats' => PejabatStruktural::all(),
         ]);

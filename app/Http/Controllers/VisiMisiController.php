@@ -9,7 +9,7 @@ class VisiMisiController extends Controller
 {
     public function index()
     {
-        return view('visi_misi',[
+        return view('vision_mission.index',[
             'active' => 'visi-misi',
             'vision_mission'=> VisiMisi::all(),
         ]);

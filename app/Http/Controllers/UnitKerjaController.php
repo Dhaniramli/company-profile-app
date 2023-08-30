@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UnitKerjaController extends Controller
 {
     public function index(){
-        return view('unit_kerja',[
+        return view('unit_kerja.index',[
             'active' => 'unit-kerja',
             'unitKerjas' => UnitKerja::all(),
         ]);
@@ -16,7 +16,7 @@ class UnitKerjaController extends Controller
 
     public function show(UnitKerja $unitKerja)
     {
-        return view('unit_kerja_detail', [
+        return view('unit_kerja.detail', [
             "active" => "unit-kerja",
             "unitKerja" => $unitKerja,
         ]);

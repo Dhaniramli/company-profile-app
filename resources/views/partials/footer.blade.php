@@ -28,6 +28,6 @@
         </div>
     </div>
     <div class="copyright">
-        <p>Hak Cipta &copy; 2023 Nama Perusahaan. Semua Hak Dilindungi.</p>
+        <p>&copy; <a href="https://linyjayainformatika.co.id/">2023 Supported Develop By LinyJaya Informatika</a></p>
     </div>
 </footer>
