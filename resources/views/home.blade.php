@@ -84,7 +84,7 @@
         </path>
     </svg>
 
-    <div class="container-fluid survey px-0">
+    <div class="container-fluid survey px-0 border-top-0 border-bottom-0">
         <div class="container survey-content">
             <div class="col-lg-12">
                 <div class="row">
@@ -101,7 +101,9 @@
                                 nisi, molestiae aliquam perferendis, illum harum velit voluptate saepe eum tempore
                                 doloribus?
                             </p>
-                            <button type="button" class="btn">Mulai Survey</button>
+                            <a href="/form-survey">
+                                <button type="button" class="btn">Mulai Survey</button>
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-6">

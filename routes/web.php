@@ -73,6 +73,7 @@ Route::post('/pengaduan/create', [ReportController::class, 'store'])->middleware
 Route::get('/pengaduan-status', [ReportController::class, 'show'])->middleware('auth');
 
 Route::get('/form-survey', [FormSurveyController::class, 'index'])->middleware('auth');
+Route::get('/form-survey/penunjang-urusan-pemerintahan-umum', [FormSurveyController::class, 'create'])->middleware('auth');
 
 Route::get('/sakip', [DocumentsPublicationsController::class, 'index']);
 

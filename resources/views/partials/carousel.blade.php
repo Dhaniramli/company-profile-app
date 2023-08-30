@@ -8,7 +8,7 @@
         </div>
         <div class="carousel-cell">
             <div class="overlay">
-                <img src="/img/one_piece2.jpg" alt="One Piece">
+                <img src="/img/one_piece.jpg" alt="One Piece">
             </div>
         </div>
         <div class="carousel-cell">
