@@ -2,44 +2,47 @@
 
 @section('content')
 <div class="container content-pengaduan">
-    <div class="title-pengaduan d-flex justify-content-center">
+    <div class="title-pengaduan d-flex justify-content-center mb-5">
         <h1>Layanan Masyarakat</h1>
     </div>
     <div class="container isi-pengaduan">
         <div class="col-lg-12">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-4 mb-3">
-                    <div class="card card-galeri">
-                        <div class="card-top">
-                            <img src="https://source.unsplash.com/400x500?technology" alt="Gambar">
+                    <a href="/pengaduan/create">
+                        <div class="card card-pengaduan">
+                            <div class="card-top">
+                                <img src="img/icon2.png" alt="Gambar">
+                            </div>
+                            <div class="card-bottom">
+                                <h2 class="card-jabatan">Kirim Pengaduan</h2>
+                            </div>
                         </div>
-                        <div class="card-bottom">
-                            <h2 class="card-jabatan">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum,
-                                dolores!</h2>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <div class="card card-galeri">
-                        <div class="card-top">
-                            <img src="https://source.unsplash.com/400x500?technology" alt="Gambar">
+                    <a href="/pengaduan-status">
+                        <div class="card card-pengaduan">
+                            <div class="card-top">
+                                <img src="img/icon1.png" alt="Gambar">
+                            </div>
+                            <div class="card-bottom">
+                                <h2 class="card-jabatan">Status Pengaduan</h2>
+                            </div>
                         </div>
-                        <div class="card-bottom">
-                            <h2 class="card-jabatan">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum,
-                                dolores!</h2>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <div class="card card-galeri">
-                        <div class="card-top">
-                            <img src="https://source.unsplash.com/400x500?technology" alt="Gambar">
+                    <a href="https://wa.me/">
+                        <div class="card card-pengaduan">
+                            <div class="card-top">
+                                <img src="img/icon3.png" alt="Gambar">
+                            </div>
+                            <div class="card-bottom">
+                                <h2 class="card-jabatan">Costumer Service</h2>
+                            </div>
                         </div>
-                        <div class="card-bottom">
-                            <h2 class="card-jabatan">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum,
-                                dolores!</h2>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
 

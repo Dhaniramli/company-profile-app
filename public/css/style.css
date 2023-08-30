@@ -132,6 +132,13 @@ body {
     display: none;
 }
 
+.navbar-nav button{
+    font-weight: 500;
+}
+
+.navbar-nav button:hover{
+    color: #5FBAE9;
+}
 /* AKHIR NAVBAR */
 
 /* CAROUSEL */

@@ -25,7 +25,7 @@
             @endforeach
 
             @if ($posts->count() === 0)
-            <p class="text-center fs-4">Tidak ada berita ditemukan.</p>
+            <p class="text-center fs-4">404 Not Found!</p>
             @endif
         </div>
     </div>

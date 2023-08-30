@@ -1,4 +1,101 @@
-.content-pengaduan{
+.content-pengaduan {
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+.content-pengaduan a {
+    text-decoration: none;
+}
+
+.content-pengaduan .card-pengaduan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.content-pengaduan .card-pengaduan:hover {
+    transform: translateY(-10px);
+}
+
+.content-pengaduan .card-pengaduan img {
+    width: 200px;
+}
+
+.content-pengaduan h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #5FBAE9;
+}
+
+/* CREATE */
+.content-create-report {
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+}
+
+.content-create-report h1{
+    text-align: center;
+}
+
+.card-create-report {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content-create-report .required {
+    color: red;
+    margin-left: 5px;
+  }
+
+  .content-create-report .btn{
+    width: 100%;
+  }
+/* AKHIR CREATE */
+
+/* STATUS REPORT */
+.content-status-report{
     margin-top: 100px;
     margin-bottom: 100px;
 }
+
+.content-status-report h1{
+    text-align: center;
+}
+
+.content-status-report img{
+    width: 100px;
+}
+
+.card-status-report{
+    padding: 20px;
+}
+/* AKHIR STATUS REPORT */
+
+/* FORM SURVEY */
+
+.content-survey a {
+    text-decoration: none;
+}
+
+
+.content-survey{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.card-survey .card-top img{
+   width: 100%;
+   height: 250px;
+}
+
+.card-survey h2{
+    font-size: 15px;
+    font-weight: 400;
+    color: #5FBAE9;
+    text-align: center;
+}
+/* AKHIR FORM SURVEY */

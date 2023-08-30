@@ -8,6 +8,8 @@
     <div class="container isi-mitra-kerja">
         <div class="col-lg-12">
             <div class="row d-flex justify-content-center">
+                @if ($workPartners->count())
+                @foreach ($workPartners as $workPartner)
                 <div class="col-md-4 mb-3">
                     <div class="card card-mitra-kerja">
                         <div class="card-top">
@@ -19,6 +21,15 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
+                @else
+                <div class="parent-container">
+                    <div class="not-found"
+                        style="height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <p class="text-center fs-4">404 Not Found!</p>
+                    </div>
+                </div>
+                @endif
             </div>
         </div>
     </div>

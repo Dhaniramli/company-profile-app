@@ -21,6 +21,16 @@
     <link rel="stylesheet" href="/css/style_program_kegiatan.css">
     <link rel="stylesheet" href="/css/style_profile.css">
     <link rel="stylesheet" href="/css/style_masyarakat.css">
+    <link rel="stylesheet" href="/css/style_mitra_kerja.css">
+    <link rel="stylesheet" href="/css/style_auth.css">
+
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
     <title>Company Profile</title>
 </head>
@@ -65,7 +75,7 @@
 
     <!-- JavaScript FLICKITY -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    
+
 </body>
 
 </html>
