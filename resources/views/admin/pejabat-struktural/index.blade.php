@@ -38,8 +38,8 @@
                         @foreach ($pejabats as $pejabat)
                         <tr>
                             <td class="col-1 align-middle text-center">{{ $loop->iteration }}</td>
-                            <td>{{ $pejabat->nama }}</td>
-                            <td>{{ $pejabat->jabatan }}</td>
+                            <td>{{ $pejabat->name }}</td>
+                            <td>{{ $pejabat->position }}</td>
                             <td class="align-middle text-center">
                                 <a href="/admin/pejabat-struktural/{{ $pejabat->id }}/edit" class="btn btn-warning btn-circle"><i class="fa fa-keyboard"
                                         aria-hidden="true"></i></a>

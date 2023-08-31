@@ -32,13 +32,13 @@ class AdminPejabatStrukturalController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama' => 'required|max:255',
-            'jabatan' => 'required|max:255',
-            'nomor' => 'required|max:255',
-            'gambar' => 'image|file|max:1024',
+            'name' => 'required|max:255',
+            'position' => 'required|max:255',
+            'number' => 'required|max:255',
+            'image' => 'image|file|max:1024',
         ]);
-        if ($request->file('gambar')) {
-            $validatedData['gambar'] = $request->file('gambar')->store('gambar-pejabat');
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('image-pejabat');
         }
 
         PejabatStruktural::create($validatedData);
@@ -70,19 +70,19 @@ class AdminPejabatStrukturalController extends Controller
     public function update(Request $request, PejabatStruktural $pejabatStruktural)
     {
         $rules = [
-            'nama' => 'required|max:255',
-            'jabatan' => 'required|max:255',
-            'nomor' => 'required|max:255',
-            'gambar' => 'image|file|max:1024',
+            'name' => 'required|max:255',
+            'position' => 'required|max:255',
+            'number' => 'required|max:255',
+            'image' => 'image|file|max:1024',
         ];
 
         $validatedData = $request->validate($rules);
 
-        if ($request->file('gambar')) {
+        if ($request->file('image')) {
             if($request->oldImage){
                 Storage::delete($request->oldImage);
             }
-            $validatedData['gambar'] = $request->file('gambar')->store('gambar-pejabat');
+            $validatedData['image'] = $request->file('image')->store('image-pejabat');
         }
 
 

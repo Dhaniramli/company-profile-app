@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('pejabat_strukturals', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('jabatan');
-            $table->string('nomor');
-            $table->string('gambar')->nullable();
+            $table->string('name');
+            $table->string('position');
+            $table->string('number');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

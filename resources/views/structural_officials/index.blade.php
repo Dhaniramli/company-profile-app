@@ -12,12 +12,12 @@
                 <div class="col-lg-3 col-md-6 mb-3">
                     <div class="card card-pejabat">
                         <div class="card-img">
-                            <img src="{{ asset('storage/' . $pejabat->gambar) }}" class="card-img-top" alt="...">
+                            <img src="{{ asset('storage/' . $pejabat->image) }}" class="card-img-top" alt="...">
                         </div>
                         <div class="card-body">
-                            <h1 class="card-name">{{ $pejabat->nama }}</h1>
-                            <h2 class="card-jabatan">{{ $pejabat->jabatan }}</h2>
-                            <h3 class="card-nomor">{{ $pejabat->nomor }}</h3>
+                            <h1 class="card-name">{{ $pejabat->name }}</h1>
+                            <h2 class="card-jabatan">{{ $pejabat->position }}</h2>
+                            <h3 class="card-nomor">{{ $pejabat->number }}</h3>
                         </div>
                     </div>
                 </div>

@@ -10,10 +10,10 @@
                 @method('put')
 
                 <div class="mb-3">
-                    <label for="nama" class="form-label">Nama Lengkap</label>
-                    <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama"
-                        required value="{{ old('nama', $pejabat->nama) }}">
-                    @error('nama')
+                    <label for="name" class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
+                        required value="{{ old('name', $pejabat->name) }}">
+                    @error('name')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -21,10 +21,10 @@
                 </div>
                 
                 <div class="mb-3">
-                    <label for="jabatan" class="form-label">Jabatan</label>
-                    <input type="text" class="form-control @error('jabatan') is-invalid @enderror" id="jabatan" name="jabatan"
-                        required value="{{ old('jabatan', $pejabat->jabatan) }}">
-                    @error('jabatan')
+                    <label for="position" class="form-label">Jabatan</label>
+                    <input type="text" class="form-control @error('position') is-invalid @enderror" id="position" name="position"
+                        required value="{{ old('position', $pejabat->position) }}">
+                    @error('position')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -32,10 +32,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="nomor" class="form-label">Nomor</label>
-                    <input type="text" class="form-control @error('nomor') is-invalid @enderror" id="nomor" name="nomor"
-                        required value="{{ old('nomor', $pejabat->nomor) }}">
-                    @error('nomor')
+                    <label for="number" class="form-label">Nomor</label>
+                    <input type="text" class="form-control @error('number') is-invalid @enderror" id="number" name="number"
+                        required value="{{ old('number', $pejabat->number) }}">
+                    @error('number')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -43,16 +43,16 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="gambar" class="form-label">Gambar</label>
-                    <input type="hidden" name="oldImage" value="{{ $pejabat->gambar }}">
-                    @if ($pejabat->gambar)
-                        <img src="{{ asset('storage/' . $pejabat->gambar) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                    <label for="image" class="form-label">Gambar</label>
+                    <input type="hidden" name="oldImage" value="{{ $pejabat->image }}">
+                    @if ($pejabat->image)
+                        <img src="{{ asset('storage/' . $pejabat->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
                     @else
                         <img class="img-preview img-fluid mb-3 col-sm-5">
                     @endif
-                        <input class="form-control" type="file" id="gambar" name="gambar" @error('gambar') is-invalid @enderror
+                        <input class="form-control" type="file" id="image" name="image" @error('image') is-invalid @enderror
                             onchange="previewImage()">
-                    @error('gambar')
+                    @error('image')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
@@ -70,13 +70,13 @@
 <script>
 
     function previewImage() {
-        const gambar = document.querySelector('#gambar');
+        const image = document.querySelector('#image');
         const imgPreview = document.querySelector('.img-preview');
 
         imgPreview.style.display = 'block';
 
         const oFReader = new FileReader();
-        oFReader.readAsDataURL(gambar.files[0]);
+        oFReader.readAsDataURL(image.files[0]);
 
         oFReader.onload = function (oFREvent) {
             imgPreview.src = oFREvent.target.result;
