@@ -98,7 +98,7 @@
     font-size: 1.2pc;
     font-weight: 400;
     text-align: center;
-    color: #5FBAE9;
+    color: #FF6000;
 }
 
 .card-pejabat h2 {
@@ -148,12 +148,12 @@
     font-size: 1pc;
     font-weight: 400;
     text-align: center;
-    color: #5FBAE9;
+    color: #FF6000;
     margin: 20px;
 }
 
 .card-unit-kerja .card-top {
-    background-color: #5FBAE9;
+    background-color: #FF6000;
     height: 130px;
     display: flex;
     justify-content: center;
@@ -175,7 +175,7 @@
 .content-unit-detail h1 {
     font-size: 25px;
     font-weight: 600;
-    color: #5FBAE9;
+    color: #FF6000;
 }
 
 .content-unit-detail h2 {

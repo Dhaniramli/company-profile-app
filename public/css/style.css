@@ -9,7 +9,7 @@ body {
 
 /* NAVBAR */
 .navbar {
-    background-color: white;
+    background-color: #3D3F3C;
     box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
 }
 
@@ -25,7 +25,7 @@ body {
 }
 
 .navbar .dropdown-item .active {
-    background-color: #5FBAE9;
+    background-color: #FF6000;
 }
 
 /* Remove border from toggler */
@@ -45,7 +45,7 @@ body {
 .toggler-icon {
     width: 30px;
     height: 3px;
-    background-color: #5FBAE9;
+    background-color: #FF6000;
     display: block;
     transition: all 0.2s;
 }
@@ -91,7 +91,7 @@ body {
 
 /* Color of Toggler when collapsed */
 .navbar-toggler.collapsed .toggler-icon {
-    background-color: #5FBAE9;
+    background-color: #FF6000;
 }
 
 
@@ -102,24 +102,24 @@ body {
 }
 
 .navbar a {
-    color: black;
+    color: white;
     font-weight: 600;
 }
 
 .navbar .nav-link:hover {
-    color: #5FBAE9;
+    color: #FF6000;
 }
 
 .navbar .nav-link.active {
-    color: #5FBAE9;
+    color: #FF6000;
 }
 
 .navbar .dropdown-menu {
-    background-color: white;
+    background-color: #3D3F3C;
 }
 
 .navbar .dropdown-menu .dropdown-item:hover {
-    background-color: #5FBAE9;
+    background-color: #FF6000;
 }
 
 /* Show dropdown on hover */
@@ -132,12 +132,16 @@ body {
     display: none;
 }
 
+.navbar-nav .nav-item .dropdown-item .active{
+    background-color: #FF6000;
+}
+
 .navbar-nav button{
     font-weight: 500;
 }
 
 .navbar-nav button:hover{
-    color: #5FBAE9;
+    color: #FF6000;
 }
 /* AKHIR NAVBAR */
 
@@ -186,7 +190,7 @@ body {
 }
 
 .cont-marquee {
-    background-color: #5FBAE9;
+    background-color: #FF6000;
     align-items: center;
     contain: content;
     height: 50px;
@@ -225,7 +229,7 @@ body {
 .content-title {
     margin-top: 50px;
     margin-bottom: 20px;
-    background-color: #5FBAE9;
+    background-color: #FF6000;
     border-radius: 5px;
     height: 50px;
     display: flex;
@@ -267,7 +271,7 @@ body {
 }
 
 .card-title-posts:hover {
-    color: #5FBAE9;
+    color: #FF6000;
 }
 
 .card-news p {
@@ -276,7 +280,7 @@ body {
 }
 
 .card-news .btn {
-    background-color: #5FBAE9;
+    background-color: #FF6000;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -300,7 +304,7 @@ body {
 
 
 .survey {
-    background-color: #5FBAE9;
+    background-color: #FF6000;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -308,7 +312,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-bottom: 200px; */
+    margin-top: 100px;
+    margin-bottom: 200px;
 }
 
 @media (max-width: 767px) {
@@ -340,7 +345,7 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: white;
-    color: #5FBAE9;
+    color: #FF6000;
     font-weight: 500;
 }
 
@@ -349,7 +354,7 @@ body {
     padding-right: 21px;
     padding-top: 6px;
     padding-bottom: 6px;
-    color: #5FBAE9;
+    color: #FF6000;
     font-weight: 700;
 }
 
@@ -367,7 +372,7 @@ body {
 
 /* FOOTER */
 footer {
-    background-color: #F5F5F5;
+    background-color: #3D3F3C;
     color: rgb(104, 104, 104);
     padding: 20px;
     margin-bottom: 0px;
@@ -379,7 +384,7 @@ footer a {
 }
 
 footer a:hover{
-    color: #5FBAE9;
+    color: #FF6000;
 }
 
 footer .copyright {
@@ -465,7 +470,7 @@ footer p{
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
     border: none;
     height: 320px;
-    /* background-color: #5FBAE9; */
+    /* background-color: #FF6000; */
 }
 
 .carousel-inner-gallery .card .img-wrapper {
@@ -504,7 +509,7 @@ footer p{
     right: 0;
     left: 0;
     border: none;
-    /* background-color: #5FBAE9; */
+    /* background-color: #FF6000; */
 }
 
 .carousel-galeri img{
