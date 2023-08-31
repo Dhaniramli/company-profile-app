@@ -7,12 +7,19 @@
 .visi-misi .img-top {
     padding: 10px;
     margin: 10px;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+}
+
+.visi-misi .img-top {
+    text-align: center;
+}
+
+.visi-misi .img-top img {
+    display: inline-block;
 }
 
 .visi-misi img {
-    width: 100%;
+    width: 300px;
 }
 
 .visi-misi h1 {
@@ -29,12 +36,26 @@
     margin-bottom: 50px;
 }
 
+.tugas-fungsi h1 {
+    font-size: 2.5pc;
+    font-weight: 700;
+    color: #FF6000;
+    margin-bottom: 30px;
+}
+
 /* AKHIR TUGAS DAN FUNGSI */
 
 /* KEDUDUKAN */
 .kedudukan {
     margin-top: 100px;
     margin-bottom: 50px;
+}
+
+.kedudukan h1{
+    font-size: 2.5pc;
+    font-weight: 700;
+    color: #FF6000;
+    margin-bottom: 30px;
 }
 
 /* AKHIR KEDUDUKAN */
@@ -51,6 +72,13 @@
     margin-bottom: 50px;
 }
 
+.content-struktur-organisasi h1{
+    font-size: 2.5pc;
+    font-weight: 700;
+    color: #FF6000;
+    margin-bottom: 30px;
+}
+
 .content-struktur-organisasi img {
     width: 100%;
 }
@@ -63,6 +91,13 @@
     margin-bottom: 50px;
 }
 
+.denah-kantor h1{
+    font-size: 2.5pc;
+    font-weight: 700;
+    color: #FF6000;
+    margin-bottom: 30px;
+}
+
 .denah-kantor img {
     width: 100%;
 }
@@ -73,6 +108,13 @@
 .content-data-pejabat {
     margin-top: 100px;
     margin-bottom: 50px;
+}
+
+.content-data-pejabat h1{
+    font-size: 2.5pc;
+    font-weight: 700;
+    color: #FF6000;
+    margin-bottom: 30px;
 }
 
 .title-data-pejabat {

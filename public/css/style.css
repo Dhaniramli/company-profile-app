@@ -138,6 +138,7 @@ body {
 
 .navbar-nav button{
     font-weight: 500;
+    color: white;
 }
 
 .navbar-nav button:hover{

@@ -9,6 +9,13 @@
     border: none;
 }
 
+.title-mitra-kerja h1{
+    font-size: 2.5pc;
+    font-weight: 700;
+    color: #FF6000;
+    margin-bottom: 30px;
+}
+
 .card-mitra-kerja img {
     display: block;
     width: 100%;

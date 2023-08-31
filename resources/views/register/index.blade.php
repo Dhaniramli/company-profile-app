@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="/css/style_auth.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    
+
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
     <title>Register</title>
 </head>
 
-<body>
+<body class="bg-gradient-primary">
     <div class="container content-auth">
         <div class="row justify-content-center">
             <div class="col-lg-6">

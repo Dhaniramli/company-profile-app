@@ -6,7 +6,6 @@
         <h1 class="text-center">TUGAS DAN FUNGSI</h1>
         @if ($jobFunctions->count())
         <article class="my-3 fs-5">
-            {{-- {!! $post->body !!} --}}
             {!! $jobFunctions[0]->body !!}
         </article>
         @else
