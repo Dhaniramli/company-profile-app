@@ -12,7 +12,7 @@
                     <a href="/form-survey/penunjang-urusan-pemerintahan-umum">
                         <div class="card card-survey">
                             <div class="card-top">
-                                <img src="img/icon1.png" alt="Gambar">
+                                <img src="img/icon4.png" alt="Gambar">
                             </div>
                             <div class="card-bottom">
                                 <h2 class="card-jabatan">Lorem ipsum dolor sit amet.</h2>

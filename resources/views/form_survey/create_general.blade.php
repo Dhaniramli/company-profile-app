@@ -102,15 +102,40 @@
                     <hr class="mt-5 mb-5">
                     <h1>Pertanyaan Kuesioner</h1>
 
+                    @foreach ($questions as $question)
                     <div class="mb-3 mt-3">
-                        <label for="quiz" class="form-label"><strong>1. </strong>Apakah masyarakat puas?</label>
+                        <label for="quiz" class="form-label"><strong>{{ $loop->iteration }}.
+                            </strong>{{ $question->questions }}</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="quiz" id="quiz1" value="Sangat Setuju">
-                            <label class="form-check-label" for="quiz1">
+                            <input class="form-check-input" type="radio" name="{{ $loop->iteration }}"
+                                id="{{ $loop->iteration }}" value="Sangat Setuju">
+                            <label class="form-check-label" for="{{ $loop->iteration }}">
                                 Sangat Setuju
                             </label>
                         </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="{{ $loop->iteration }}"
+                                id="{{ $loop->iteration }}" value="Setuju">
+                            <label class="form-check-label" for="{{ $loop->iteration }}">
+                                Setuju
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="{{ $loop->iteration }}"
+                                id="{{ $loop->iteration }}" value="Kurang Setuju">
+                            <label class="form-check-label" for="{{ $loop->iteration }}">
+                                Kurang Setuju
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="{{ $loop->iteration }}"
+                                id="{{ $loop->iteration }}" value="Tidak Setuju">
+                            <label class="form-check-label" for="{{ $loop->iteration }}">
+                                Tidak Setuju
+                            </label>
+                        </div>
                     </div>
+                    @endforeach
 
                     <div class="mb-3 mt-3">
                         <label for="comment" class="form-label">Tuliskan komentar/usulan Saudara terhadap kemajuan dan

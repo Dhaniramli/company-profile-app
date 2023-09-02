@@ -114,9 +114,14 @@
    height: 250px;
 }
 
+.card-survey .card-bottom{
+    max-height: 50px;
+}
+
 .card-survey h2{
+    margin-top: 5px;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 500;
     color: #FF6000;
     text-align: center;
 }

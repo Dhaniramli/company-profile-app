@@ -51,7 +51,7 @@
         </div>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{ (Request::is('admin/survey-masyarakat*') || Request::is('')) ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
             aria-expanded="true" aria-controls="collapseThree">
             <i class="fa fa-users"></i>
@@ -60,7 +60,7 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="#">Pengaduan Masyarakat</a>
-                <a class="collapse-item" href="#">Survey Masyarakat</a>
+                <a class="collapse-item {{ Request::is('admin/survey-masyarakat*') ? 'active' : '' }}" href="/admin/survey-masyarakat">Survey Masyarakat</a>
             </div>
         </div>
     </li>

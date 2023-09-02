@@ -27,6 +27,7 @@ use App\Http\Controllers\DocumentsPublicationsController;
 use App\Http\Controllers\AdminPejabatStrukturalController;
 use App\Http\Controllers\OrganizationalStructureController;
 use App\Http\Controllers\AdminOrganizationalStructureController;
+use App\Http\Controllers\AdminSocietySurveyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,42 +62,35 @@ Route::get('/unit-kerja/{unitKerja}', [UnitKerjaController::class, 'show']);
 
 Route::get('/galeri-kegiatan', [GalerisController::class, 'index']);
 
-Route::get('/pengaduan', [ReportController::class, 'index'])->middleware('auth');
-Route::get('/pengaduan/create', [ReportController::class, 'create'])->middleware('auth');
-Route::post('/pengaduan/create', [ReportController::class, 'store'])->middleware('auth');
-Route::get('/pengaduan-status', [ReportController::class, 'show'])->middleware('auth');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/pengaduan', [ReportController::class, 'index']);
+    Route::get('/pengaduan/create', [ReportController::class, 'create']);
+    Route::post('/pengaduan/create', [ReportController::class, 'store']);
+    Route::get('/pengaduan-status', [ReportController::class, 'show']);
+    Route::get('/form-survey', [FormSurveyController::class, 'index']);
+    Route::get('/form-survey/penunjang-urusan-pemerintahan-umum', [FormSurveyController::class, 'create']);
+});
 
-Route::get('/form-survey', [FormSurveyController::class, 'index'])->middleware('auth');
-Route::get('/form-survey/penunjang-urusan-pemerintahan-umum', [FormSurveyController::class, 'create'])->middleware('auth');
 
 Route::get('/sakip', [DocumentsPublicationsController::class, 'index']);
 
 Route::get('/mitra-kerja', [WorkPartnersController::class, 'index']);
 
-
-
-Route::get('/admin', [AdminController::class, 'index'])->middleware('admin');
-
-Route::resource('/admin/visi-misi', AdminVisiMisiController::class)->middleware('admin');
-
-Route::get('/admin/posts/checkSlug', [AdminPostController::class, 'checkSlug'])->middleware('admin');
-Route::resource('/admin/posts', AdminPostController::class)->middleware('admin');
-
-Route::resource('/admin/galeri', AdminGaleriController::class)->middleware('admin');
-
-Route::get('/admin/unit-kerja/checkSlugUnit', [AdminUnitKerjaController::class, 'checkSlugUnit'])->middleware('admin');
-Route::resource('/admin/unit-kerja', AdminUnitKerjaController::class)->middleware('admin');
-
-Route::resource('/admin/pejabat-struktural', AdminPejabatStrukturalController::class)->middleware('admin');
-
-Route::resource('/admin/denah-kantor', AdminOfficePlanController::class)->middleware('admin');
-
-Route::resource('/admin/struktur-organisasi', AdminOrganizationalStructureController::class)->middleware('admin');
-
-Route::resource('/admin/tugas-fungsi', AdminJobFunctionController::class)->middleware('admin');
-
-Route::resource('/admin/kedudukan-alamat', AdminPositionAddressController::class)->middleware('admin');
-
+Route::middleware(['admin'])->group(function(){
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::resource('/admin/visi-misi', AdminVisiMisiController::class);
+    Route::get('/admin/posts/checkSlug', [AdminPostController::class, 'checkSlug']);
+    Route::resource('/admin/posts', AdminPostController::class);
+    Route::resource('/admin/galeri', AdminGaleriController::class);
+    Route::get('/admin/unit-kerja/checkSlugUnit', [AdminUnitKerjaController::class, 'checkSlugUnit']);
+    Route::resource('/admin/unit-kerja', AdminUnitKerjaController::class);
+    Route::resource('/admin/pejabat-struktural', AdminPejabatStrukturalController::class);
+    Route::resource('/admin/denah-kantor', AdminOfficePlanController::class);
+    Route::resource('/admin/struktur-organisasi', AdminOrganizationalStructureController::class);
+    Route::resource('/admin/tugas-fungsi', AdminJobFunctionController::class);
+    Route::resource('/admin/kedudukan-alamat', AdminPositionAddressController::class);
+    Route::resource('/admin/survey-masyarakat', AdminSocietySurveyController::class);
+});
 
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
