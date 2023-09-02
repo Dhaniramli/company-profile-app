@@ -33,9 +33,9 @@
 
     </style>
 
-    
+    <script src="sweetalert2.all.min.js"></script>
 
-   
+
 </head>
 
 <body id="page-top">
@@ -113,13 +113,70 @@
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+
+    </script>
+
+    {{-- SWEETALERT --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(document).on('click', '#saveButton', function (e) {
+                e.preventDefault();
+
+                var link = $(this).attr("href");
+
+                Swal.fire({
+                    title: 'Apakah kamu yakin?',
+                    text: "Kamu akan memverifikasi ini!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, Verifikasi!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = link;
+                        Swal.fire(
+                            'Berhasil diverifikasi!',
+                        )
+                    }
+                })
+            })
+
+            $(document).on('click', '#deleteButton', function (e) {
+                e.preventDefault();
+
+                var link = $(this).attr("href");
+
+                Swal.fire({
+                    title: 'Apakah kamu yakin?',
+                    text: "Anda tidak akan dapat mengembalikannya!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, Hapus!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = link;
+                        Swal.fire(
+                            'Berhasil dihapus!',
+                        )
+                    }
+                })
+            })
+        })
+
+    </script>
+
 </body>
 
 </html>

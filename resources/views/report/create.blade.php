@@ -95,7 +95,7 @@
                     </div>
 
                     <div class="mb-3 mt-3">
-                        <label for="image_ktp" class="form-label">Foto Aduan Anda<span class="required">*</span></label>
+                        <label for="image_ktp" class="form-label">Foto KTP Anda<span class="required">*</span></label>
                         <img class="img-preview img-fluid mb-3 col-sm-5">
                         <input class="form-control" type="file" id="image_ktp" name="image_ktp" @error('image_ktp')
                             is-invalid @enderror onchange="previewImage()">

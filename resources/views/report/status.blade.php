@@ -36,7 +36,7 @@
                         <td>{{ $report->title_report }}</td>
                         <td>{!! $report->report !!}</td>
                         <td><img width="100px" src="{{ asset('storage/' . $report->image_report) }}" alt=""></td>
-                        <td>NNN</td>
+                        <td>{{ $report->status === 0 ? 'Menunggu' : 'Terverifikasi'}}</td>
                     </tr>
                     @endforeach
                 </tbody>

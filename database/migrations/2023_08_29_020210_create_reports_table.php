@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('report');
             $table->string('image_report');
             $table->string('image_ktp');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

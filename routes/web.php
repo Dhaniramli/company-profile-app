@@ -14,6 +14,7 @@ use App\Http\Controllers\UnitKerjaController;
 use App\Http\Controllers\FormSurveyController;
 use App\Http\Controllers\OfficePlanController;
 use App\Http\Controllers\AdminGaleriController;
+use App\Http\Controllers\AdminReportController;
 use App\Http\Controllers\JobFunctionController;
 use App\Http\Controllers\WorkPartnersController;
 use App\Http\Controllers\AdminVisiMisiController;
@@ -22,12 +23,12 @@ use App\Http\Controllers\AdminOfficePlanController;
 use App\Http\Controllers\PositionAddressController;
 use App\Http\Controllers\AdminJobFunctionController;
 use App\Http\Controllers\PejabatStrukturalController;
+use App\Http\Controllers\AdminSocietySurveyController;
 use App\Http\Controllers\AdminPositionAddressController;
 use App\Http\Controllers\DocumentsPublicationsController;
 use App\Http\Controllers\AdminPejabatStrukturalController;
 use App\Http\Controllers\OrganizationalStructureController;
 use App\Http\Controllers\AdminOrganizationalStructureController;
-use App\Http\Controllers\AdminSocietySurveyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +91,10 @@ Route::middleware(['admin'])->group(function(){
     Route::resource('/admin/tugas-fungsi', AdminJobFunctionController::class);
     Route::resource('/admin/kedudukan-alamat', AdminPositionAddressController::class);
     Route::resource('/admin/survey-masyarakat', AdminSocietySurveyController::class);
+    Route::resource('/admin/pengaduan-masyarakat', AdminReportController::class);
+    Route::get('/survey/verifikasi/{id}', [AdminReportController::class, 'report_verification']);
+    Route::get('/survey/hapus/{id}', [AdminReportController::class, 'destroy']);
+    Route::get('/admin/pengaduan-masyarakat/detail/{id}', [AdminReportController::class, 'show']);
 });
 
 
