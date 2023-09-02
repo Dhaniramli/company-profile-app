@@ -6,16 +6,14 @@
     <div class="row my-3">
         <div class="col-lg-8">
             <h2 class="mb-3">{{ $post->title }}</h2>
-            <a href="/admin/posts" class="btn btn-success"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back
-                to all my
-                posts</a>
+            <a href="/admin/posts" class="btn btn-success"><i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali</a>
             <a href="/admin/posts/{{ $post->slug }}/edit" class="btn btn-warning"><i class="fa fa-keyboard"
                     aria-hidden="true"></i> Edit</a>
             <form action="/admin/posts/{{ $post->slug }}" method="POST" class="d-inline">
                 @method('delete')
                 @csrf
                 <button class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"
-                        aria-hidden="true"></i> Delete</button>
+                        aria-hidden="true"></i> Hapus</button>
             </form>
 
             @if ($post->image)
