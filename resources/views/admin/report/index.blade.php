@@ -24,11 +24,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                      @if (!$reports->count())
-                          <tr>
+                        @if (!$reports->count())
+                        <tr>
                             <td colspan="6" class="align-middle text-center">Belum ada data</td>
-                          </tr>
-                      @endif
+                        </tr>
+                        @endif
                         @foreach ($reports as $report)
                         <tr>
                             <td class="col-1 align-middle text-center">{{ $loop->iteration }}</td>
@@ -50,10 +50,11 @@
                                 <a href="/admin/pengaduan-masyarakat/detail/{{ $report->id }}"
                                     class="btn btn-warning btn-circle"><i class="fa fa-eye" aria-hidden="true"></i></a>
 
-                                <a class="btn btn-danger btn-circle" href="{{ url('/survey/hapus/' . $report->id) }}" id="deleteButton">
-                                  <i class="fa fa-trash" aria-hidden="true"></i>
-                              </a>
-                           
+                                <a class="btn btn-danger btn-circle" href="{{ url('/survey/hapus/' . $report->id) }}"
+                                    id="deleteButton">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+
                             </td>
                         </tr>
                         @endforeach

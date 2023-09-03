@@ -65,8 +65,8 @@
         </div>
     </li>
 
-    <li class="nav-item ">
-        <a class="nav-link" href="#">
+    <li class="nav-item {{ Request::is('admin/dokumen-publikasi*') ? 'active' : '' }}">
+        <a class="nav-link" href="/admin/dokumen-publikasi">
             <i class="fa fa-camera"></i>
             <span>Dokumen & Publikasi</span></a>
     </li>

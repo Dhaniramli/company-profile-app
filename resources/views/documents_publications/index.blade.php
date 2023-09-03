@@ -15,15 +15,20 @@
                     <tr>
                         <th class="col-1">No</th>
                         <th class="col-9">Judul</th>
-                        <th>File</th>
+                        <th class="col-2 align-middle text-center">File</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($sakips as $sakip)
                     <tr>
                         <td class="col-1 align-middle text-center">{{ $loop->iteration }}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $sakip->title }}</td>
+                        <td class="align-middle text-center">
+                            <a href="{{ url('/file/download/' . $sakip->id) }}"
+                                class="btn btn-success btn-icon-split">
+                                <span class="text">Download</span>
+                            </a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

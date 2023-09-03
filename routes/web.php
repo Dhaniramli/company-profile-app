@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminDocumentsPublicationsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\GalerisController;
@@ -95,6 +96,9 @@ Route::middleware(['admin'])->group(function(){
     Route::get('/survey/verifikasi/{id}', [AdminReportController::class, 'report_verification']);
     Route::get('/survey/hapus/{id}', [AdminReportController::class, 'destroy']);
     Route::get('/admin/pengaduan-masyarakat/detail/{id}', [AdminReportController::class, 'show']);
+    Route::resource('/admin/dokumen-publikasi', AdminDocumentsPublicationsController::class);
+    Route::get('/file/download/{id}', [AdminDocumentsPublicationsController::class, 'download']);
+    Route::get('/dokumen-publikasi/hapus/{id}', [AdminDocumentsPublicationsController::class, 'destroy']);
 });
 
 

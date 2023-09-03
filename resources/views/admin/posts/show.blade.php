@@ -9,6 +9,7 @@
             <a href="/admin/posts" class="btn btn-success"><i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali</a>
             <a href="/admin/posts/{{ $post->slug }}/edit" class="btn btn-warning"><i class="fa fa-keyboard"
                     aria-hidden="true"></i> Edit</a>
+                    
             <form action="/admin/posts/{{ $post->slug }}" method="POST" class="d-inline">
                 @method('delete')
                 @csrf
