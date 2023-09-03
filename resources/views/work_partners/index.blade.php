@@ -10,14 +10,13 @@
             <div class="row d-flex justify-content-center">
                 @if ($workPartners->count())
                 @foreach ($workPartners as $workPartner)
-                <div class="col-md-4 mb-3">
+                <div class="col-lg-4 col-md-6 mb-3">
                     <div class="card card-mitra-kerja">
                         <div class="card-top">
-                            <img src="https://source.unsplash.com/400x500?technology" alt="Gambar">
+                            <img src="{{ asset('storage/' . $workPartner->image) }}" alt="Gambar">
                         </div>
                         <div class="card-bottom">
-                            <h2 class="card-jabatan">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum,
-                                dolores!</h2>
+                            <h2 class="card-jabatan">{{ $workPartner->title }}</h2>
                         </div>
                     </div>
                 </div>

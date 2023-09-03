@@ -71,7 +71,7 @@
             <span>Dokumen & Publikasi</span></a>
     </li>
 
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
             aria-expanded="true" aria-controls="collapseFour">
             <i class="fa fa-link"></i>
@@ -82,10 +82,10 @@
                 <a class="collapse-item" href="#">Youtube</a>
             </div>
         </div>
-    </li>
+    </li> --}}
 
-    <li class="nav-item ">
-        <a class="nav-link" href="#">
+    <li class="nav-item {{ Request::is('admin/mitra-kerja*') ? 'active' : '' }}">
+        <a class="nav-link" href="/admin/mitra-kerja">
             <i class="fa fa-handshake"></i>
             <span>Mitra Kerja</span></a>
     </li>

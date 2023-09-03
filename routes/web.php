@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AdminDocumentsPublicationsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\GalerisController;
@@ -23,12 +22,14 @@ use App\Http\Controllers\AdminUnitKerjaController;
 use App\Http\Controllers\AdminOfficePlanController;
 use App\Http\Controllers\PositionAddressController;
 use App\Http\Controllers\AdminJobFunctionController;
+use App\Http\Controllers\AdminWorkPartnersController;
 use App\Http\Controllers\PejabatStrukturalController;
 use App\Http\Controllers\AdminSocietySurveyController;
 use App\Http\Controllers\AdminPositionAddressController;
 use App\Http\Controllers\DocumentsPublicationsController;
 use App\Http\Controllers\AdminPejabatStrukturalController;
 use App\Http\Controllers\OrganizationalStructureController;
+use App\Http\Controllers\AdminDocumentsPublicationsController;
 use App\Http\Controllers\AdminOrganizationalStructureController;
 
 /*
@@ -99,6 +100,8 @@ Route::middleware(['admin'])->group(function(){
     Route::resource('/admin/dokumen-publikasi', AdminDocumentsPublicationsController::class);
     Route::get('/file/download/{id}', [AdminDocumentsPublicationsController::class, 'download']);
     Route::get('/dokumen-publikasi/hapus/{id}', [AdminDocumentsPublicationsController::class, 'destroy']);
+    Route::resource('/admin/mitra-kerja', AdminWorkPartnersController::class);
+    Route::get('/mitra-kerja/hapus/{id}', [AdminWorkPartnersController::class, 'destroy']);
 });
 
 
