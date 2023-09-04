@@ -126,6 +126,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript">
         $(function () {
+            // ALERT
             $(document).on('click', '#saveButton', function (e) {
                 e.preventDefault();
 
@@ -150,6 +151,7 @@
                 })
             })
 
+            // ALERT DELETE
             $(document).on('click', '#deleteButton', function (e) {
                 e.preventDefault();
 
@@ -171,6 +173,21 @@
                             'Berhasil dihapus!',
                         )
                     }
+                })
+            })
+
+            // ALERT SUCCESS
+            $(document).on('click', '#successAlert', function (e) {
+                e.preventDefault();
+
+                var link = $(this).attr("href");
+
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
                 })
             })
         })

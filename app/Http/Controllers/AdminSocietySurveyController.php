@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Answer;
 use App\Models\Question;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,7 @@ class AdminSocietySurveyController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.society_survey.create');
     }
 
     /**
@@ -30,7 +31,13 @@ class AdminSocietySurveyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'questions' => 'required|max:255',
+        ]);
+
+        Question::create($validatedData);
+
+        return redirect('/admin/survey-masyarakat')->with('success', 'Berhasil ditambahkan!');
     }
 
     /**
@@ -63,5 +70,47 @@ class AdminSocietySurveyController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function answer($id) {
+        // dd(Answer::where('question_id', $id));
+        return view('admin.society_survey.answer',[
+            'item' => Question::find($id),
+            'answer' => Answer::where('question_id', $id),
+        ]);
+    }
+
+    public function store_answer(Request $request) {
+
+        $validatedData = $request->validate([
+            'A' => 'max:255',
+            'B' => 'max:255',
+            'C' => 'max:255',
+            'D' => 'max:255',
+            'E' => 'max:255',
+            'question_id' => 'required',
+        ]);
+
+        Answer::create($validatedData);
+
+        return redirect('/admin/survey-masyarakat')->with('success', 'Berhasil ditambahkan!');
+    }
+
+    public function update_jawaban(Request $request) {
+        $rules = [
+            'A' => 'max:255',
+            'B' => 'max:255',
+            'C' => 'max:255',
+            'D' => 'max:255',
+            'E' => 'max:255',
+            'question_id' => 'required',
+        ];
+
+        $validatedData = $request->validate($rules);
+
+
+        Answer::where('id', $request->id)->update($validatedData);
+
+        return redirect('/admin/survey-masyarakat')->with('success', 'Berhasil ditambahkan!');
     }
 }

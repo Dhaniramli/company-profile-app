@@ -16,11 +16,11 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header">
-            <a href="/admin/posts/create" class="btn btn-primary btn-icon-split">
+            <a href="/admin/survey-masyarakat/create" class="btn btn-primary btn-icon-split">
                 <span class="icon text-white-50">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 </span>
-                <span class="text">Buat Pertanyaan</span>
+                <span class="text">Tambah Pertanyaan</span>
             </a>
         </div>
         <div class="card-body">
@@ -29,8 +29,8 @@
                     <thead>
                         <tr>
                             <th class="col-1 align-middle text-center">No</th>
-                            <th class="col-6">Pertanyaan</th>
-                            <th class="col-3">Jawaban</th>
+                            <th class="col-7">Pertanyaan</th>
+                            <th class="col-2 align-middle text-center">Jawaban</th>
                             <th class="col-2 align-middle text-center">Action</th>
                         </tr>
                     </thead>
@@ -39,13 +39,16 @@
                         <tr>
                             <td class="col-1 align-middle text-center">{{ $loop->iteration }}</td>
                             <td>{{ $question->questions }}</td>
-                            <td>{{ $question->questions }}</td>
+                            <td class="align-middle text-center">
+                                <a href="/admin/survey-masyarakat/jawaban/{{ $question->id }}" class="btn btn-warning btn-circle"><i class="fa fa-keyboard"
+                                    aria-hidden="true"></i></a>
+                            </td>
                             <td class="align-middle text-center">
                                 <a href="/admin/survey-masyarakat/" class="btn btn-success btn-circle"><i
                                         class="fa fa-eye" aria-hidden="true"></i></a>
-                                <a href="/admin/posts//edit" class="btn btn-warning btn-circle"><i class="fa fa-keyboard"
+                                <a href="/admin/survey-masyarakat//edit" class="btn btn-warning btn-circle"><i class="fa fa-keyboard"
                                         aria-hidden="true"></i></a>
-                                <form action="/admin/posts/" method="POST" class="d-inline">
+                                <form action="/admin/survey-masyarakat/" method="POST" class="d-inline">
                                     @method('delete')
                                     @csrf
                                     <button class="btn btn-danger btn-circle" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"

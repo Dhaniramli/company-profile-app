@@ -102,6 +102,9 @@ Route::middleware(['admin'])->group(function(){
     Route::get('/dokumen-publikasi/hapus/{id}', [AdminDocumentsPublicationsController::class, 'destroy']);
     Route::resource('/admin/mitra-kerja', AdminWorkPartnersController::class);
     Route::get('/mitra-kerja/hapus/{id}', [AdminWorkPartnersController::class, 'destroy']);
+    Route::get('/admin/survey-masyarakat/jawaban/{id}', [AdminSocietySurveyController::class, 'answer']);
+    Route::post('/admin/survey-masyarakat/jawaban', [AdminSocietySurveyController::class, 'store_answer']);
+    Route::put('/admin/survey-masyarakat/update-jawaban/{id}', [AdminSocietySurveyController::class, 'update_jawaban']);
 });
 
 

@@ -9,6 +9,8 @@ class Question extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function answer(){
         return $this->hasMany(Answer::class);
     }
