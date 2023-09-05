@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('surveys', function (Blueprint $table) {
+        Schema::create('form_surveys', function (Blueprint $table) {
             $table->id();
-            // $table->string('question');
-            // $table->string('answer');
+            $table->string('name');
+            $table->string('jender');
+            $table->string('job');
+            $table->string('email');
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

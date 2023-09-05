@@ -72,6 +72,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/pengaduan-status', [ReportController::class, 'show']);
     Route::get('/form-survey', [FormSurveyController::class, 'index']);
     Route::get('/form-survey/penunjang-urusan-pemerintahan-umum', [FormSurveyController::class, 'create']);
+    Route::post('/form-survey/penunjang-urusan-pemerintahan-umum/create', [FormSurveyController::class, 'store']);
 });
 
 

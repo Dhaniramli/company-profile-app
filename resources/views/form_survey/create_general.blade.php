@@ -11,7 +11,7 @@
         <div class="col-lg-12">
             <div class="card card-create-report">
                 <h1>Data Diri</h1>
-                <form method="POST" action="/pengaduan/create" enctype="multipart/form-data">
+                <form method="POST" action="/form-survey/penunjang-urusan-pemerintahan-umum/create" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3 mt-3">
                         <label for="name" class="form-label">Nama Lengkap<span class="required">*</span></label>
@@ -106,34 +106,57 @@
                     <div class="mb-3 mt-3">
                         <label for="quiz" class="form-label"><strong>{{ $loop->iteration }}.
                             </strong>{{ $question->questions }}</label>
+
+                        @if ($question->answer->first()->A)
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="{{ $loop->iteration }}"
-                                id="{{ $loop->iteration }}" value="Sangat Setuju">
-                            <label class="form-check-label" for="{{ $loop->iteration }}">
-                                Sangat Setuju
+                            <input class="form-check-input" type="radio" name="pertanyaan_{{ $question->id }}"
+                                id="A" value="{{ $question->answer->first()->A }}">
+                            <label class="form-check-label" for="A">
+                                {{ $question->answer->first()->A }}
                             </label>
                         </div>
+                        @endif
+
+                        @if ($question->answer->first()->B)
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="{{ $loop->iteration }}"
-                                id="{{ $loop->iteration }}" value="Setuju">
-                            <label class="form-check-label" for="{{ $loop->iteration }}">
-                                Setuju
+                            <input class="form-check-input" type="radio" name="pertanyaan_{{ $question->id }}"
+                                id="B" value="{{ $question->answer->first()->B }}">
+                            <label class="form-check-label" for="B">
+                                {{ $question->answer->first()->B }}
                             </label>
                         </div>
+                        @endif
+
+                        @if ($question->answer->first()->C)
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="{{ $loop->iteration }}"
-                                id="{{ $loop->iteration }}" value="Kurang Setuju">
-                            <label class="form-check-label" for="{{ $loop->iteration }}">
-                                Kurang Setuju
+                            <input class="form-check-input" type="radio" name="pertanyaan_{{ $question->id }}"
+                                id="C" value="{{ $question->answer->first()->C }}">
+                            <label class="form-check-label" for="C">
+                                {{ $question->answer->first()->C }}
                             </label>
                         </div>
+                        @endif
+
+                        @if ($question->answer->first()->D)
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="{{ $loop->iteration }}"
-                                id="{{ $loop->iteration }}" value="Tidak Setuju">
-                            <label class="form-check-label" for="{{ $loop->iteration }}">
-                                Tidak Setuju
+                            <input class="form-check-input" type="radio" name="pertanyaan_{{ $question->id }}"
+                                id="D" value="{{ $question->answer->first()->D }}">
+                            <label class="form-check-label" for="D">
+                                {{ $question->answer->first()->D }}
                             </label>
                         </div>
+                        @endif
+
+                        @if ($question->answer->first()->E)
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pertanyaan_{{ $question->id }}"
+                                id="E" value="{{ $question->answer->first()->E }}">
+                            <label class="form-check-label" for="E">
+                                {{ $question->answer->first()->E }}
+                            </label>
+                        </div>
+                        @endif
+
                     </div>
                     @endforeach
 
