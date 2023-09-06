@@ -33,8 +33,14 @@ class AdminDocumentsPublicationsController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|max:255',
-            'file' => 'required',
+            'file' => 'required|mimetypes:application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        ], [
+            'file.mimetypes' => 'File harus berupa dokumen PDF, DOC, atau DOCX.',
         ]);
+        // $validatedData = $request->validate([
+        //     'title' => 'required|max:255',
+        //     'file' => 'required|mimetypes:application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        // ]);
 
         // if ($request->file('file')) {
         //     $validatedData['file'] = $request->file('file')->store('file-document-publication');
