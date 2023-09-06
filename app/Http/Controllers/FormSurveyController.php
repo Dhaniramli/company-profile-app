@@ -49,10 +49,14 @@ class FormSurveyController extends Controller
                 $idPertanyaan = str_replace('pertanyaan_', '', $key);
                 $jawaban = $value;
 
+                // Dapatkan pertanyaan yang sesuai dengan ID pertanyaan
+                $pertanyaan = Question::find($idPertanyaan)->questions;
+
+
                 // Simpan data jawaban kuesioner ke dalam tabel AnswerResult
                 AnswerResult::create([
-                    'survey_id' => $user->id, // Mengaitkan data dengan ID pengguna yang baru dibuat
-                    'question_result' => $idPertanyaan, // Gantilah dengan field yang sesuai
+                    'form_survey_id' => $user->id, // Mengaitkan data dengan ID pengguna yang baru dibuat
+                    'question_result' => $pertanyaan, // Gantilah dengan field yang sesuai
                     'answer_result' => $jawaban,
                 ]);
             }

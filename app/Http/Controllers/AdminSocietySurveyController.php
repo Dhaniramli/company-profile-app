@@ -53,7 +53,9 @@ class AdminSocietySurveyController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.society_survey.edit', [
+            'question' => Question::find($id),
+        ]);
     }
 
     /**
@@ -61,7 +63,15 @@ class AdminSocietySurveyController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $rules = [
+            'questions' => 'required|max:255',
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        Question::where('id', $id)->update($validatedData);
+
+        return redirect('/admin/survey-masyarakat')->with('success', 'Berhasil ditambahkan!');
     }
 
     /**
@@ -69,18 +79,23 @@ class AdminSocietySurveyController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $soal = Question::where('id', $id)->first();
+        $soal->delete();
+
+        return redirect('/admin/survey-masyarakat');
     }
 
-    public function answer($id) {
+    public function answer($id)
+    {
         // dd(Answer::where('question_id', $id));
-        return view('admin.society_survey.answer',[
+        return view('admin.society_survey.answer', [
             'item' => Question::find($id),
             'answer' => Answer::where('question_id', $id),
         ]);
     }
 
-    public function store_answer(Request $request) {
+    public function store_answer(Request $request)
+    {
 
         $validatedData = $request->validate([
             'A' => 'max:255',
@@ -96,7 +111,8 @@ class AdminSocietySurveyController extends Controller
         return redirect('/admin/survey-masyarakat')->with('success', 'Berhasil ditambahkan!');
     }
 
-    public function update_jawaban(Request $request) {
+    public function update_jawaban(Request $request)
+    {
         $rules = [
             'A' => 'max:255',
             'B' => 'max:255',

@@ -12,7 +12,7 @@ class AnswerResult extends Model
     
     protected $guarded = ['id'];
 
-    public function formsurvey(){
+    public function formSurvey(){
         return $this->belongsTo(FormSurvey::class, 'survey_id');
     }
 }

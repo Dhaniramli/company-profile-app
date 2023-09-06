@@ -31,6 +31,7 @@ use App\Http\Controllers\AdminPejabatStrukturalController;
 use App\Http\Controllers\OrganizationalStructureController;
 use App\Http\Controllers\AdminDocumentsPublicationsController;
 use App\Http\Controllers\AdminOrganizationalStructureController;
+use App\Http\Controllers\AdminResultController;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,7 +106,10 @@ Route::middleware(['admin'])->group(function(){
     Route::get('/mitra-kerja/hapus/{id}', [AdminWorkPartnersController::class, 'destroy']);
     Route::get('/admin/survey-masyarakat/jawaban/{id}', [AdminSocietySurveyController::class, 'answer']);
     Route::post('/admin/survey-masyarakat/jawaban', [AdminSocietySurveyController::class, 'store_answer']);
+    Route::get('/admin/pertanyaan/hapus/{id}', [AdminSocietySurveyController::class, 'destroy']);
     Route::put('/admin/survey-masyarakat/update-jawaban/{id}', [AdminSocietySurveyController::class, 'update_jawaban']);
+    Route::resource('/admin/hasil-survey-masyarakat', AdminResultController::class);
+    Route::get('/hasil/hapus/{id}', [AdminResultController::class, 'destroy']);
 });
 
 

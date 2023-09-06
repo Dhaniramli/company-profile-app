@@ -11,7 +11,7 @@ class FormSurvey extends Model
 
     protected $guarded = ['id'];
 
-    public function answerresult(){
+    public function answerResult(){
         return $this->hasMany(AnswerResult::class);
     }
 }
