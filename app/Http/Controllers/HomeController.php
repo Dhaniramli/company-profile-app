@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Galeri;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Spatie\Analytics\AnalyticsFacade as Analytics;
+
 
 class HomeController extends Controller
 {
