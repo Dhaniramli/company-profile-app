@@ -17,14 +17,14 @@ use App\Http\Controllers\ApiController\FormSurveyController;
 use App\Http\Controllers\ApiController\OrganizationalStructureController;
 use App\Http\Controllers\ApiController\ReportController;
 
-// Route::middleware(['auth:sanctum'])->group(function () {
+Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/pengaduan', [ReportController::class, 'store']);
     Route::get('/pengaduan', [ReportController::class, 'index']);
     Route::get('/form-survey/kuesioner', [FormSurveyController::class, 'kuesioner']);
     Route::post('/form-survey/penunjang-urusan-pemerintahan-umum', [FormSurveyController::class, 'store']);
 
     Route::get('/logout', [AuthenticateController::class, 'logout']);
-// });
+});
 
 Route::get('/visi-misi', [VissionMissionController::class, 'index']);
 Route::get('/tugas-fungsi', [JobFunctionController::class, 'index']);
