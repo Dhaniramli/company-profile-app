@@ -22,7 +22,7 @@ class UnitKerja extends Model
     {
         return [
             'slug' => [
-                'source' => 'judul'
+                'source' => 'title'
             ]
         ];
     }

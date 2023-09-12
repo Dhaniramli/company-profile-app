@@ -38,8 +38,8 @@
                         @foreach ($unitKerjas as $unitKerja)
                         <tr>
                             <td class="col-1 align-middle text-center">{{ $loop->iteration }}</td>
-                            <td>{{ $unitKerja->judul }}</td>
-                            <td>{{ $unitKerja->lokasi }}</td>
+                            <td>{{ $unitKerja->title }}</td>
+                            <td>{{ $unitKerja->location }}</td>
                             <td class="align-middle text-center">
                                 <a href="/admin/unit-kerja/{{ $unitKerja->slug }}/edit" class="btn btn-warning btn-circle"><i class="fa fa-keyboard"
                                         aria-hidden="true"></i></a>

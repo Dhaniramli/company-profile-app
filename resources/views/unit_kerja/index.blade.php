@@ -11,10 +11,10 @@
                     <a href="/unit-kerja/{{ $unitKerja->slug }}" class="text-decoration-none">
                         <div class="card card-unit-kerja">
                             <div class="card-top">
-                                <h1 class="card-name">{{ Str::limit($unitKerja->judul, 105, '...') }}</h1>
+                                <h1 class="card-name">{{ Str::limit($unitKerja->title, 105, '...') }}</h1>
                             </div>
                             <div class="card-bottom">
-                                <h2 class="card-jabatan">Lokasi : {{ Str::limit($unitKerja->lokasi, 70, '...') }}</h2>
+                                <h2 class="card-jabatan">Lokasi : {{ Str::limit($unitKerja->location, 70, '...') }}</h2>
                             </div>
                         </div>
                     </a>

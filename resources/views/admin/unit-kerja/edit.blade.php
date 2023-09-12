@@ -10,10 +10,10 @@
                 @method('put')
 
                 <div class="mb-3">
-                    <label for="judul" class="form-label">Judul</label>
-                    <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" name="judul"
-                        required value="{{ old('judul', $unitKerja->judul) }}">
-                    @error('judul')
+                    <label for="title" class="form-label">Judul</label>
+                    <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
+                        required value="{{ old('title', $unitKerja->title) }}">
+                    @error('title')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -34,10 +34,10 @@
                 </div> --}}
 
                 <div class="mb-3">
-                    <label for="lokasi" class="form-label">Lokasi</label>
-                    <input type="text" class="form-control @error('lokasi') is-invalid @enderror" id="lokasi"
-                        name="lokasi" required value="{{ old('lokasi', $unitKerja->lokasi) }}">
-                    @error('lokasi')
+                    <label for="location" class="form-label">Lokasi</label>
+                    <input type="text" class="form-control @error('location') is-invalid @enderror" id="location"
+                        name="location" required value="{{ old('location', $unitKerja->location) }}">
+                    @error('location')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -45,13 +45,13 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="tugas_dan_fungsi" class="form-label">Tugas dan Fungsi</label>
-                    @error('tugas_dan_fungsi')
+                    <label for="job_function" class="form-label">Tugas dan Fungsi</label>
+                    @error('job_function')
                     <p class="text-danger">{{ $message }}</p>
                     @enderror
-                    <input id="tugas_dan_fungsi" type="hidden" name="tugas_dan_fungsi"
-                        value="{{ old('tugas_dan_fungsi', $unitKerja->tugas_dan_fungsi) }}">
-                    <trix-editor input="tugas_dan_fungsi"></trix-editor>
+                    <input id="job_function" type="hidden" name="job_function"
+                        value="{{ old('job_function', $unitKerja->job_function) }}">
+                    <trix-editor input="job_function"></trix-editor>
                 </div>
 
                 <button type="submit" class="btn btn-primary mb-4">Simpan</button>

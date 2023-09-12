@@ -32,10 +32,10 @@ class AdminUnitKerjaController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'judul' => 'required|max:255',
+            'title' => 'required|max:255',
             'slug' => 'required|unique:unit_kerjas',
-            'lokasi' => 'required|max:255',
-            'tugas_dan_fungsi' => 'required',
+            'location' => 'required|max:255',
+            'job_function' => 'required',
         ]);
 
         UnitKerja::create($validatedData);
@@ -67,9 +67,9 @@ class AdminUnitKerjaController extends Controller
     public function update(Request $request, UnitKerja $unitKerja)
     {
         $rules = [
-            'judul' => 'required|max:255',
-            'lokasi' => 'required|max:255',
-            'tugas_dan_fungsi' => 'required',
+            'title' => 'required|max:255',
+            'location' => 'required|max:255',
+            'job_function' => 'required',
         ];
 
         if ($request->slug != $unitKerja->slug) {
@@ -88,7 +88,6 @@ class AdminUnitKerjaController extends Controller
      */
     public function destroy(UnitKerja $unitKerja)
     {
-       
         UnitKerja::destroy($unitKerja->id);
 
         return redirect('/admin/unit-kerja')->with('success', 'Berhasil dihapus!');
@@ -96,7 +95,7 @@ class AdminUnitKerjaController extends Controller
 
     public function checkSlugUnit(Request $request)
     {
-        $slug = SlugService::createSlug(UnitKerja::class, 'slug', $request->judul);
+        $slug = SlugService::createSlug(UnitKerja::class, 'slug', $request->title);
         
         return response()->json(['slug' => $slug]);
     }

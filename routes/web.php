@@ -78,6 +78,7 @@ Route::middleware(['auth'])->group(function(){
 
 
 Route::get('/sakip', [DocumentsPublicationsController::class, 'index']);
+Route::get('/file/download/{id}', [AdminDocumentsPublicationsController::class, 'download']);
 
 Route::get('/mitra-kerja', [WorkPartnersController::class, 'index']);
 
@@ -100,7 +101,6 @@ Route::middleware(['admin'])->group(function(){
     Route::get('/survey/hapus/{id}', [AdminReportController::class, 'destroy']);
     Route::get('/admin/pengaduan-masyarakat/detail/{id}', [AdminReportController::class, 'show']);
     Route::resource('/admin/dokumen-publikasi', AdminDocumentsPublicationsController::class);
-    Route::get('/file/download/{id}', [AdminDocumentsPublicationsController::class, 'download']);
     Route::get('/dokumen-publikasi/hapus/{id}', [AdminDocumentsPublicationsController::class, 'destroy']);
     Route::resource('/admin/mitra-kerja', AdminWorkPartnersController::class);
     Route::get('/mitra-kerja/hapus/{id}', [AdminWorkPartnersController::class, 'destroy']);
