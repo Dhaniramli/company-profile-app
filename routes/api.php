@@ -42,3 +42,4 @@ Route::get('/sakip/download/{id}', [DocumentsPublicationsController::class, 'dow
 Route::get('/mitra-kerja', [WorkPartnersController::class, 'index']);
 
 Route::post('/login', [AuthenticateController::class, 'login']);
+Route::post('/register', [AuthenticateController::class, 'register']);

@@ -28,6 +28,21 @@ class AuthenticateController extends Controller
         return $user->createToken('user login')->plainTextToken;
     }
 
+    public function register(Request $request)
+    {
+        $validateData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|unique:users',
+            'password' => 'required|min:5|max:255'
+        ]);
+
+        $validateData['password'] = bcrypt($validateData['password']);
+
+        $users = User::create($validateData);
+
+        return response()->json(['data' => $users]);
+    }
+
     public function logout(Request $request)
     {
         $request->user()->currentAccessToken()->delete();
