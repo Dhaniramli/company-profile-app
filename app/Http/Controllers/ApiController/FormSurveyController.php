@@ -8,80 +8,51 @@ use App\Models\AnswerResult;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Question\QuestionResource;
+use App\Http\Controllers\ApiController\BaseController;
 
 class FormSurveyController extends Controller
 {
-
-    // public function kuesioner()
-    // {
-    //     $items = Question::with('answers')->get();
-
-    //     if (!$items->count()) {
-    //         return response()->json(['message' => 'Tidak ada Data!'], 404);
-    //     }
-
-    //     $questionData = $items->map(function ($question) {
-    //         $data = [
-    //             'id' => $question->id,
-    //             'questions' => $question->questions,
-    //             'created_at' => date_format($question->created_at, "Y/m/d H:i:s"),
-    //         ];
-
-    //         // Loop melalui jawaban dan tambahkan ke dalam array
-    //         foreach ($question->answers as $answer) {
-    //             $data['A'] = $answer->A;
-    //             $data['B'] = $answer->B;
-    //             $data['C'] = $answer->C;
-    //             $data['D'] = $answer->D;
-    //             $data['E'] = $answer->E;
-    //         }
-
-    //         return $data;
-    //     });
-
-    //     return response()->json(['data' => $questionData]);
-    // }
     public function kuesioner()
-{
-    $items = Question::with('answers')->get();
+    {
+        $items = Question::with('answers')->get();
 
-    if (!$items->count()) {
-        return response()->json(['message' => 'Tidak ada Data!'], 404);
-    }
-
-    $questionData = $items->map(function ($question) {
-        $data = [
-            'id' => $question->id,
-            'questions' => $question->questions,
-            'created_at' => date_format($question->created_at, "Y/m/d H:i:s"),
-            'options' => [], // Inisialisasi array untuk opsi jawaban
-        ];
-
-        // Loop melalui jawaban dan tambahkan ke dalam array options
-        foreach ($question->answers as $answer) {
-            // Hanya tambahkan opsi yang tidak null
-            if (!is_null($answer->A)) {
-                $data['options'][] = $answer->A;
-            }
-            if (!is_null($answer->B)) {
-                $data['options'][] = $answer->B;
-            }
-            if (!is_null($answer->C)) {
-                $data['options'][] = $answer->C;
-            }
-            if (!is_null($answer->D)) {
-                $data['options'][] = $answer->D;
-            }
-            if (!is_null($answer->E)) {
-                $data['options'][] = $answer->E;
-            }
+        if (!$items->count()) {
+            return BaseController::jsonResponseSuccessError(false, 'Tidak ada Data!');
         }
 
-        return $data;
-    });
+        $questionData = $items->map(function ($question) {
+            $data = [
+                'id' => $question->id,
+                'questions' => $question->questions,
+                'created_at' => date_format($question->created_at, "Y/m/d H:i:s"),
+                'options' => [], // Inisialisasi array untuk opsi jawaban
+            ];
 
-    return response()->json(['data' => $questionData]);
-}
+            // Loop melalui jawaban dan tambahkan ke dalam array options
+            foreach ($question->answers as $answer) {
+                // Hanya tambahkan opsi yang tidak null
+                if (!is_null($answer->A)) {
+                    $data['options'][] = $answer->A;
+                }
+                if (!is_null($answer->B)) {
+                    $data['options'][] = $answer->B;
+                }
+                if (!is_null($answer->C)) {
+                    $data['options'][] = $answer->C;
+                }
+                if (!is_null($answer->D)) {
+                    $data['options'][] = $answer->D;
+                }
+                if (!is_null($answer->E)) {
+                    $data['options'][] = $answer->E;
+                }
+            }
+
+            return $data;
+        });
+
+        return BaseController::jsonResponseSuccessError(true, 'Data berhasil ditemukan!', $questionData);
+    }
 
 
     public function store(Request $request)
@@ -136,6 +107,6 @@ class FormSurveyController extends Controller
             'result' => $result,
         ];
 
-        return response()->json(['data' => $responseData]);
+        return BaseController::jsonResponseSuccessError(true, 'Data berhasil ditemukan!', $responseData);
     }
 }

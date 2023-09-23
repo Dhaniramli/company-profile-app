@@ -6,10 +6,12 @@ use App\Models\Report;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Report\ReportResource;
+use App\Http\Controllers\ApiController\BaseController;
 
 class ReportController extends Controller
 {
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $validatedData = $request->validate([
             'nik' => 'required|max:255',
             'name' => 'required|max:255',
@@ -30,16 +32,17 @@ class ReportController extends Controller
 
         $report = Report::create($validatedData);
 
-        return response()->json(['data' => $report]);
+        return BaseController::jsonResponseSuccessError(true, 'Data berhasil dikirim!', $report);
     }
 
-    public function index() {
+    public function index()
+    {
         $items = Report::all();
 
         if (!$items->count()) {
-            return response()->json(['message' => 'Tidak ada Data!'], 404);
+            return BaseController::jsonResponseSuccessError(false, 'Tidak ada data!');
         }
 
-        return ReportResource::collection($items);
+        return BaseController::jsonResponseSuccessError(true, 'Data berhasil ditemukan!', ReportResource::collection($items));
     }
 }

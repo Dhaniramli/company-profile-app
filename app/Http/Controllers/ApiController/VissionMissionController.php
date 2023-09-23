@@ -6,16 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\VissionMission\VissionMissionResource;
 use App\Models\VisiMisi;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ApiController\BaseController;
+
 
 class VissionMissionController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $items = VisiMisi::all();
 
         if (!$items->count()) {
-            abort(code: 404, message: 'Tidak ada data!');
+            return BaseController::jsonResponseSuccessError(false, 'Tidak ada data!');
         }
 
-        return VissionMissionResource::collection($items);
+        return BaseController::jsonResponseSuccessError(true, 'Data berhasil diambil', VissionMissionResource::collection($items));
     }
 }

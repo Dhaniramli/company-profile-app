@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\News\NewsDetailResource;
+use App\Http\Controllers\ApiController\BaseController;
 use App\Http\Resources\News\NewsResource as NewsNewsResource;
 
 class NewsController extends Controller
@@ -15,10 +16,10 @@ class NewsController extends Controller
         $items = Post::all();
 
         if (!$items->count()) {
-            return response()->json(['message' => 'Tidak ada Data!'], 404);
+            return BaseController::jsonResponseSuccessError(false, 'Tidak ada data!');
         }
 
-        return NewsNewsResource::collection($items);
+        return BaseController::jsonResponseSuccessError(true, 'Data berhasil ditemukan!', NewsNewsResource::collection($items));
     }
 
     public function show($id)
@@ -26,9 +27,10 @@ class NewsController extends Controller
         $items = Post::find($id);
 
         if (!$items) {
-            abort(code: 404, message: 'Data tidak ditemukan!');
+            // abort(code: 404, message: 'Data tidak ditemukan!');
+            return BaseController::jsonResponseSuccessError(false, 'Tidak ada data!');
         }
 
-        return new NewsDetailResource($items);
+        return BaseController::jsonResponseSuccessError(true, 'Data berhasil ditemukan!', new NewsDetailResource($items));
     }
 }
