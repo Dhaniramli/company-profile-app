@@ -48,7 +48,7 @@ class AdminPostController extends Controller
 
         Post::create($validatedData);
 
-        return redirect('/admin/posts')->with('success', 'Berita berhasil ditambahkan!');
+        return redirect('/admin//posts')->with('success', 'Berhasil ditambahkan!');
     }
 
     /**

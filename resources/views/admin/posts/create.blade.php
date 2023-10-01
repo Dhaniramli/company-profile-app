@@ -43,13 +43,20 @@
                     @enderror
                 </div>
 
-                <div class="mb-3">
+                {{-- <div class="mb-3">
                     <label for="body" class="form-label">Isi Berita</label>
                     @error('body')
                     <p class="text-danger">{{ $message }}</p>
                     @enderror
                     <input id="body" type="hidden" name="body" value="{{ old('body') }}">
                     <trix-editor input="body"></trix-editor>
+                </div> --}}
+                <div class="mb-3">
+                    <label for="body" class="form-label">Isi Berita</label>
+                    @error('body')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
+                    <textarea id="ckeditor" name="body">{{ old('body') }}</textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary mb-4">Buat</button>
@@ -86,6 +93,19 @@
         }
     }
 
+</script>
+
+{{-- CKEDITOR --}}
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#ckeditor' ), {
+            // Konfigurasi opsi di sini
+            // removePlugins: [ 'Bold', 'Italic' ], // Matikan fitur Bold dan Italic
+            toolbar: [ 'heading', '|', 'bulletedList', 'numberedList', 'bold' ] // Atur toolbar sesuai kebutuhan
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
 </script>
 
 @endsection

@@ -35,6 +35,8 @@
 
     <script src="sweetalert2.all.min.js"></script>
 
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+
 
 </head>
 
